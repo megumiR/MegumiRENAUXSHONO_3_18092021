@@ -26,16 +26,61 @@
 
 
 /*general*/
+$fontfamily-text: Roboto, sans-serif;
+$fontfamily-logoTitle: Shrikhand, serif;
+
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
-$fontfamily-text: Roboto, sans-serif;
-$fontfamily-logoTitle: Shrikhand, serif;
-
+$width: device-width
+/*
+.  -typograhy{
+    font-size: 1em;
+    font-style: italic;
+    color: blue;
+}*/
 body{
     font-family: $fontfamily-text;
 }
 h2{
     font-family: $fontfamily-logoTitle;
+    text-transform: uppercase;
+}
+
+$position: center;
+
+@mixin flex{
+    display: flex;
+    justify-content: $position;
+    align-items: $position;
+}
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: $position;
+}
+/*header*/
+.header{
+    width: 100%;
+    &__logo{
+        width: 280px;  /*??????????????/*/
+        height: auto;
+        @include flex;
+    }
+}
+
+/*aside*/
+
+.aside{
+    &__button{
+        &--color{
+            background-color: $color-primary;
+            color: #fff;
+        }
+        &--shadow{
+            box-shadow: 1px 1px 1px #f2f2f2;
+        }
+    }
 }

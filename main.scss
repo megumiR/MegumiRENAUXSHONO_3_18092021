@@ -1,0 +1,41 @@
+/*
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/placeholders";
+@import "./utils/extensions";   /*maybe you dont need*//*
+
+@import "./vendors";
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./components/buttons";
+
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";
+
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+
+@import "./themes";
+
+*/
+
+
+/*general*/
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+$fontfamily-text: Roboto, sans-serif;
+$fontfamily-logoTitle: Shrikhand, serif;
+
+body{
+    font-family: $fontfamily-text;
+}
+h2{
+    font-family: $fontfamily-logoTitle;
+}

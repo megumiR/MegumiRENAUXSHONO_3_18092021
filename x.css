@@ -16,7 +16,6 @@ body{
 }
 h2{
     font-family: Shrikhand, serif; /* $fontfamily-logoTitle; */
-    text-transform: uppercase;
 }
 
 /*
@@ -30,7 +29,7 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: $position;
+    align-items: center;
 }
 */
 
@@ -56,44 +55,76 @@ h2{
     height: 3rem;
 
     background-color: rgba(0, 0, 0, .10);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+       /*    @include flex;*/
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   
 }
 .nav--bordershadow{
     border-top:rgba(0, 0, 0, .10);
-    box-shadow: ;
+    box-shadow: ;   /*???????????????*/
 }
 .nav__icon--color{
     color: rgba(0, 0, 0, .75);
 }
 .nav__searchfield{
     margin-left: 1rem;
-
+    height: 100%;
 }
 .nav__searchfield--border{
     border: none;
+
 }
-.nav__searchfield--bgcolor{
-    background:rgba(0, 0, 0, .03);  /*??????????????*/  
+
+.nav__searchfield--size{
+    background:rgba(0, 0, 0, .03);  /*??????????????*/
+    height: 100%;
+    width: 200px;  
 }
+
 
 /*aside*/
 
 .aside{
+    /*    @include  flexColumn */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;  
+}
+.aside--bgcolor{
     background-color: #f2f2f2;
-
 }
-
+.aside--padding{
+    padding: 50px 20px 50px 20px;
+}
+.aside--text-align{
+    text-align: center;
+}
+.aside__title{
+    width: 75%;
+}
+.aside__title--margin{
+    margin: 0;
+}
+.aside__button{
+    cursor: pointer;
+}
 .aside__button--color{
-            background-color:#9356DC;/* $color-primary;*/
-            background-image: liner-gradient(-45deg, $colo 0%, $colo 100%);*/
-            color: #fff;
+    background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
+    color: #fff;
 }
-        
+
+.aside__button--shape{
+    width: 180px;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+}        
 .aside__button--shadow{
-            box-shadow: 1px 1px 1px #f2f2f2;  /*$color-base;*/
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
 }
 
 

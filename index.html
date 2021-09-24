@@ -6,33 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scal=1.0" />    
       
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>            <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <script 
             src="https://kit.fontawesome.com/bc4ab73547.js" 
             crossorigin="anonymous"> 
         </script>
 
 
-        <link rel="stylesheet" href="main.css" />
-    
+<link rel="stylesheet" href="x.css" />
+
+<!--
+        <link rel="stylesheet" href="./css/main.css" />
+-->    
         <title>ohmyfood</title>
     </head>
     <body>
         <header class="header">
             <img 
-            src="images/logo/ohmyfood.png" 
+            src="images/logo/ohmyfood@2x.svg" 
             alt="logo_ohmyfood"
             class="header__logo" 
             
             />
         </header>
-        <nav class="nav">
+        <nav class="nav nav--bordershadow">   <!--border but shadow???-->
             <div class="nav__icon--color">
                 <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="nav__searchfield">
                 <input 
-                    
+                    class="nav__searchfield--border nav__searchfield--bgcolor"
                     type="search"
                     value="Paris, Belleville"
                 />

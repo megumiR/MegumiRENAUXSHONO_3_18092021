@@ -130,6 +130,81 @@ h2{
 
 
 /*article*/
+.block-howto{
+    /*    @include  flexColumn */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;  
+
+}
+.block-howto--padding
+{
+    padding: 50px 20px 50px 20px; /*same as aside*/
+}
+.block-howto__card{
+       /*  @mixin flex(????? $justifyCo: $justifyCo-center);
+           @include flex(?????$justifyCo-fstart); change from default 
+       */
+       display: flex;
+       justify-content: flex-start; /*for here*/
+       align-items: center;
+}
+
+
+.block-howto__card--bgcolor{
+    background-color: #f2f2f2;
+}
+
+.block-howto__card--bgcolor:active{
+    background-color: #9356DC; /*opacity* on backcolor not on everything*/
+    opacity: 0.2;
+
+}
+
+.block-howto__card--shape{
+    width: 350px;
+    height: 4.5rem;
+    border-radius: 20px;
+    border: none;
+}   
+.block-howto__card--shadow{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+.block-howto__card--margin{
+    margin: 20px 0 20px 0;
+}
+.block-howto__number--color{
+    background-color: #9356DC;
+    color: #fff;
+}
+.block-howto__number--shape{
+    width: 1.1rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    padding-top: 5px;
+    padding-left: 9px;
+}
+.block-howto__number--margin{
+    margin-left: -15px;
+}
+.block-howto__icon--color{
+    color: rgba(0, 0, 0, .75);
+}
+
+.block-howto__icon--color:active{
+    background-color: #9356DC; /*opacity* on backcolor not on everything*/
+    opacity: 0.2;
+
+}
+.block-howto__icon--margin{
+    margin: 0 20px 0 20px;
+}
+
+
+
+
+/*section restaurants*/
 $card-border-radius: 20px;
 
 .art{

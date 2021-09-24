@@ -32,6 +32,7 @@ $fontfamily-logoTitle: Shrikhand, serif;
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$color-base: #f2f2f2;
 
 $width: device-width
 /*
@@ -77,10 +78,44 @@ $position: center;
     &__button{
         &--color{
             background-color: $color-primary;
+            /*background-image: liner-gradient(-45deg, $colo 0%, $colo 100%);*/
             color: #fff;
         }
         &--shadow{
-            box-shadow: 1px 1px 1px #f2f2f2;
+            box-shadow: 1px 1px 1px $color-base;
         }
     }
+}
+/*article*/
+$card-border-radius: 20px;
+
+.art{
+    /*
+    @include flexColumn
+*/
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    background-color: $color-base;
+
+    &__card{
+        width: 90%;
+        height: auto;
+        border-radius: $card-border-radius;
+        &--imgsize{
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: $card-border-radius $card-border-radius 0 0;
+        }
+        &--text{
+            width: 90%;
+            display: flex;
+        }
+        &--iconcolor{
+            margin-left: auto;
+            margin-right: 5px;
+        }
+    }
+    
 }

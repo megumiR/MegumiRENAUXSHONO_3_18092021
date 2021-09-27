@@ -47,6 +47,9 @@ h2{
     height: 18rem;  */
 }
 
+
+/*article*/
+
 .art{
     margin-top: -40px;
     z-index: 2;
@@ -63,8 +66,39 @@ h2{
         display: flex;
         justify-content: space-around; 
         align-items: center;
-    }
+    
 
+}
+/*section*/
+/*
+
+$fontweight-secTitle: 500;
+@mixin secTitle($fontweight: $fontweight-secTitle){
+    text-transform: uppercase;
+    font-weight: $fontweight;
+}
+
+$textDeco-shortline: underline $color-tertiary 3px; 
+@mixin underlineDeco($textDeco: $textDeco-shortline){
+    font-style: normal;
+    text-decoration: $textDeco;
+}
+*/
+
+.secEntrees{  /*appears block by block*/
+
+}
+.secEntrees__title{    /*@include secTitle(); */
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.secEntrees__title--border{ /*@mixin underlineDeco(); */
+    font-style: normal;
+    text-decoration: underline #99e2d0 3px;
+}
+
+
+.sec__card{
 
 
 }

@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif; /* $fontfamily-text;  */
+}
+h2{
+    font-family: Shrikhand, serif; /* $fontfamily-logoTitle; */
+}
+
+
+/*header*/
+.header{
+    width: 100%;
+}
+.header{
+       /*    @include flex;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo{
+        width: 220px; 
+        height: auto;
+
+        padding: 20px 20px 20px 20px;
+
+        order: 2;
+}
+.header__icon{
+    order: 1;
+}
+.header__icon--padding{
+    padding-right: 1rem;
+}
+
+/*div img*/
+.catchyimg{
+    object-fit: cover;
+    z-index: 1;
+}
+.catchyimg--size{
+    width: 100%;
+    height: 10rem;
+
+/*@media 
+    height: 18rem;  */
+}
+
+.art{
+    margin-top: -40px;
+    z-index: 2;
+} 
+.art--bgcolor{
+    background-color: #f2f2f2; /*background doesnt wanna be on top*/
+}
+.art--border{
+    border-radius: 20px 20px 0 0;
+}
+.art__header{
+    z-index: 3;
+    /*@include flex($justifyCo-saround);  */
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+    }
+
+
+
+}

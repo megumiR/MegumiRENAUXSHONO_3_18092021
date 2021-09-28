@@ -24,10 +24,15 @@ h2{
         height: auto;
 
         padding: 20px 20px 20px 20px;
-
+}
+.header__logo--order{
         order: 2;
 }
 .header__icon{
+
+    cursor: pointer;
+}
+.header__icon--order{
     order: 1;
 }
 .header__icon--padding{
@@ -135,6 +140,9 @@ $textDeco-shortline: underline $color-tertiary 3px;
     border-radius: 15px;
     transition: transform 200ms ease-in 50ms; /*transition in parent part*/
     transform-origin: right;
+    /*--shadow{*/
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);  
+    
 }
 
 .sec__card:hover + .sec__card--checked {

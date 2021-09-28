@@ -1,0 +1,277 @@
+$fontfamily-text: Roboto, sans-serif;
+$fontfamily-logoTitle: Shrikhand, serif;
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-base: #f2f2f2;
+
+$width: device-width;
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif; /* $fontfamily-text;  */
+}
+h2{
+    font-family: Shrikhand, serif; /* $fontfamily-logoTitle; */
+}
+
+/*header*/
+$position: center;
+$default: stretch;
+$justifyCo-center: center;
+$justifyCo-fstart: flex-start; /*default value*/
+$justifyCo-saround: space-around;
+
+$flex-wrap: wrap;
+
+@mixin flex($justifyCo: $justifyCo-center){
+    display: flex;
+    justify-content: $justifyCo;
+    align-items: $position;
+}
+@mixin flexColumn($justifyCo: $justifyCo-saround, $align-item: $position){
+    display: flex;
+    flex-direction: column;
+    justify-content: $justifyCo;
+    align-items: $align-item;
+}
+
+
+.header{
+    width: 100%;
+    @include flex;
+
+    &__logo{
+        width: 220px; 
+        height: auto;
+        padding: 20px 20px 20px 20px;
+        &--order{
+            order: 2;
+        }
+    }
+    &__icon{
+        cursor: pointer;
+        &--order{
+            order: 1;
+        }
+        &--padding{
+            padding-right: 1rem;
+        }        
+    }
+}
+
+/*div img*/
+.catchyimg{
+    object-fit: cover;
+    &--size{
+        width: 100%;
+        height: 10rem;
+        @media all and (min-width:700px) and (max-width:1200px){
+            height: 18rem; 
+        }
+    }
+}
+
+/*article*/
+
+.art{
+    margin-top: -40px;
+    padding-bottom: 50px;
+
+    &--bgcolor{
+        background-color: #f2f2f2; /*background doesnt wanna be on top*/
+    }
+    &--border{
+        border-radius: 20px 20px 0 0;
+    }
+    &__header{
+        @include flex($justifyCo-saround);
+    }
+} 
+
+/*section*/
+$fontweight-secTitle: 500;
+@mixin secTitle($fontweight: $fontweight-secTitle){
+    text-transform: uppercase;
+    font-weight: $fontweight;
+    font-size: 1.3em;
+}
+
+$textDeco-shortline: underline $color-tertiary 3px; 
+@mixin underlineDeco($textDeco: $textDeco-shortline){
+    font-style: normal;
+    text-decoration: $textDeco;
+}
+
+/*$card-transition: ;  */
+$card-transitionorigin: right;
+$card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19); 
+@mixin secCard {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 15px;
+
+    transition: transform 200ms ease-in 50ms; /*transition in parent part*/
+    transform-origin: $card-transitionorigin;
+
+    box-shadow: $card-shadow;
+}
+@mixin checkicon{
+    background-color: $color-tertiary;  
+    height: 100%;
+    color: #fff;
+    margin-left: auto;
+    padding: 0 15px 0 15px;
+    border-radius: 0 15px 15px 0;
+}
+
+
+
+/*appears block by block*/
+.secEntrees{  
+
+}
+.secPlats{
+
+}
+.secDesserts{}
+
+
+/*section cards positon setting*/
+.sec{
+    &--position{
+    position: relative;
+    min-height: 280px;
+    }
+    &__card{
+        &--1stposition{
+        position: absolute;
+        top: 40px;
+        width: 95%;
+        }
+        &--2ndposition{
+        position: absolute;
+        top: 110px;
+        width: 95%;
+        }
+        &--3rdposition{
+        position: absolute;
+        top: 180px;
+        width: 95%;
+        }
+    }
+/*title deco*/
+    &__title{    
+        @include secTitle();
+
+        padding-left: 8px;
+        &--border{ 
+            @include underlineDeco();
+        }
+    }
+
+    &__card{
+        @include secCard;
+        
+        &:hover + .sec__card--checked{
+            transform: translate(100px, 0);
+        }
+        &--notchecked{
+            z-index: 1;
+        }
+        &--notcheckedSize{
+            width: 100%;
+            padding-right: 20px;
+        }
+        &--checked{
+            z-index: 2;
+            visibility: collapse; /*opacity: 0;   0-no display ,1-display on*/
+        }
+        &--margin{
+            margin: 0 5px 0 5px
+        }
+        &--textmargin{
+            margin: 0;
+            display: flex;
+        }
+        &--pricemargin{
+            margin-left: auto;
+        }
+        &--textflex{
+            @include flexColumn($justifyCo-saround, $default);
+            
+        }
+        &--padding{
+            padding: 10px;
+        }
+        &--textareasize{
+            min-width: 75%
+        }
+        &--check{
+            @include checkicon;
+            @include flex();
+        }
+    }
+}
+
+/*article order button*/
+
+.art{
+    &__buttonarea{
+        @include flex();
+    }
+    &__button{
+        @include flex();
+        cursor: pointer;   
+        
+        &--color{
+        background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
+        color: #fff;
+        }
+    }
+    &--shape{
+        width: 180px;
+        height: 2.5rem;
+        border-radius: 20px;
+        border: none;
+        text-decoration: none;
+    }
+    &--shadow{
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    }        
+}
+
+
+/*footer*/
+
+.footer{
+    &--textmargin{
+    margin: 0;
+    }
+    &--textcolor {
+        color: #fff;
+    }
+    &--textcolor a {
+        color: #fff;
+    }
+    &--bgcolor{
+        background-color: #484848;
+    }
+    &--padding{
+        padding: 30px 0 30px 18px;
+    }
+    &__list{
+        &--deco{
+        text-decoration: none;
+        list-style-type: none;
+        }
+        &--padding{
+            padding: 5px 0 5px 0;
+        }
+    }
+}

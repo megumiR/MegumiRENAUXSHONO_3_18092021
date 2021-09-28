@@ -37,7 +37,7 @@ h2{
 /*div img*/
 .catchyimg{
     object-fit: cover;
-    z-index: 1;
+   
 }
 .catchyimg--size{
     width: 100%;
@@ -52,7 +52,7 @@ h2{
 
 .art{
     margin-top: -40px;
-    z-index: 2;
+    padding-bottom: 50px;
 } 
 .art--bgcolor{
     background-color: #f2f2f2; /*background doesnt wanna be on top*/
@@ -61,13 +61,11 @@ h2{
     border-radius: 20px 20px 0 0;
 }
 .art__header{
-    z-index: 3;
+    
     /*@include flex($justifyCo-saround);  */
         display: flex;
         justify-content: space-around; 
         align-items: center;
-    
-
 }
 /*section*/
 /*
@@ -76,6 +74,7 @@ $fontweight-secTitle: 500;
 @mixin secTitle($fontweight: $fontweight-secTitle){
     text-transform: uppercase;
     font-weight: $fontweight;
+    font-size: 1.3em;
 }
 
 $textDeco-shortline: underline $color-tertiary 3px; 
@@ -88,11 +87,40 @@ $textDeco-shortline: underline $color-tertiary 3px;
 .secEntrees{  /*appears block by block*/
 
 }
+.secPlats{
+
+}
+.secDesserts{}
 
 
+/*section cards positon setting*/
+.sec--position{
+    position: relative;
+    min-height: 280px;
+}
+.sec__card--1stposition{
+    position: absolute;
+    top: 40px;
+    width: 95%;
+}
+.sec__card--2ndposition{
+    position: absolute;
+    top: 110px;
+    width: 95%;
+}
+.sec__card--3rdposition{
+    position: absolute;
+    top: 180px;
+    width: 95%;
+}
+
+/**/
 .sec__title{    /*@include secTitle(); */
     text-transform: uppercase;
     font-weight: 500;
+    font-size: 1.3em;
+
+    padding-left: 8px;
 }
 .sec__title--border{ /*@mixin underlineDeco(); */
     font-style: normal;
@@ -105,16 +133,33 @@ $textDeco-shortline: underline $color-tertiary 3px;
     justify-content: space-between;
     background-color: #fff;
     border-radius: 15px;
+    transition: transform 200ms ease-in 50ms; /*transition in parent part*/
+    transform-origin: right;
 }
-/*
-.sec__card:active .sec__card--check {
+
+.sec__card:hover + .sec__card--checked {
+    transform: translate(100px, 0);
+}
+
+.sec__card--notchecked{
+    z-index: 1;
+}
+.sec__card--notcheckedSize{
+    width: 100%;
+    padding-right: 20px;
+}
+.sec__card--checked{
+    z-index: 2;
+    visibility: collapse;
+ /*   opacity: 0;    /*0 no display ,1 display on*/
+
+}
 
 
-*/
+
 .sec__card--margin
 {
-    margin: 10px 5px 10px 5px
-    
+    margin: 0 5px 0 5px
 }
 .sec__card--textmargin{
     margin: 0;
@@ -133,9 +178,11 @@ $textDeco-shortline: underline $color-tertiary 3px;
 .sec__card--padding{
     padding: 10px;
 }
+.sec__card--textareasize{
+    min-width: 75%
+}
 /*
 @mixin checkicon{
-    opacity: 0; 
     background-color: $color-tertiary;  
     height: 100%;
     color: #fff;
@@ -143,16 +190,9 @@ $textDeco-shortline: underline $color-tertiary 3px;
     padding: 0 15px 0 15px;
     border-radius: 0 15px 15px 0;
 }
-If it's :active, opacity 1 and show it.
-
-
-
-
-
 */
 .sec__card--check{
     /*@include checkicon; */
-    opacity: 0; /*0 no display ,1 display on*/
     background-color: #99e2d0;  /*$color-tertiary*/
     height: 100%;
     color: #fff;
@@ -166,4 +206,62 @@ If it's :active, opacity 1 and show it.
   align-items: center;
 
 
+}
+
+/*article order button*/
+.art__buttonarea{
+      /*@include flex();  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.art__button{
+  /*@include flex();  */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+
+    cursor: pointer;
+}
+.art__button--color{
+    background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
+    color: #fff;
+}
+
+.art__button--shape{
+    width: 180px;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+}        
+.art__button--shadow{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+
+
+/*footer*/
+
+.footer--textmargin{
+    margin: 0;
+}
+.footer--textcolor {
+    color: #fff;
+}
+.footer--textcolor a {
+    color: #fff;
+}
+.footer--bgcolor{
+    background-color: #484848;
+}
+.footer--padding{
+    padding: 30px 0 30px 18px;
+}
+.footer__list--deco{
+    text-decoration: none;
+    list-style-type: none;
+}
+.footer__list--padding{
+    padding: 5px 0 5px 0;
 }

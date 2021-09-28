@@ -171,6 +171,7 @@ $btn-border-radius: 20px;
                 background-color: #9356DC; /*opacity* on backcolor not on everything*/
                 opacity: 0.2;
             }
+        }
         &--shape{
             width: 350px;
             height: 4.5rem;
@@ -183,6 +184,7 @@ $btn-border-radius: 20px;
         &--margin{
             margin: 20px 0 20px 0;
         }
+    }
     &__number{
         &--color{
         background-color: #9356DC;
@@ -291,15 +293,16 @@ $card-border-radius: 20px;
 /*footer*/
 $footerTextcolor: #fff;
 
+
 .footer{
     &--textmargin{
-        margin: 0;
+    margin: 0;
     }
-    &--textcolor{
+    &--textcolor {
         color: $footerTextcolor;
     }
     &--textcolor a {
-        color: #fff;
+        color: $footerTextcolor;
     }
     &--bgcolor{
         background-color: #484848;

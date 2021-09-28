@@ -88,17 +88,82 @@ $textDeco-shortline: underline $color-tertiary 3px;
 .secEntrees{  /*appears block by block*/
 
 }
-.secEntrees__title{    /*@include secTitle(); */
+
+
+.sec__title{    /*@include secTitle(); */
     text-transform: uppercase;
     font-weight: 500;
 }
-.secEntrees__title--border{ /*@mixin underlineDeco(); */
+.sec__title--border{ /*@mixin underlineDeco(); */
     font-style: normal;
     text-decoration: underline #99e2d0 3px;
 }
 
 
 .sec__card{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 15px;
+}
+/*
+.sec__card:active .sec__card--check {
+
+
+*/
+.sec__card--margin
+{
+    margin: 10px 5px 10px 5px
+    
+}
+.sec__card--textmargin{
+    margin: 0;
+    display: flex;
+}
+.sec__card--pricemargin{
+    margin-left: auto;
+}
+.sec__card--textflex{
+   /* @mixin flexColumn();   */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      /*  align-items: center;  /*remove*/
+}
+.sec__card--padding{
+    padding: 10px;
+}
+/*
+@mixin checkicon{
+    opacity: 0; 
+    background-color: $color-tertiary;  
+    height: 100%;
+    color: #fff;
+    margin-left: auto;
+    padding: 0 15px 0 15px;
+    border-radius: 0 15px 15px 0;
+}
+If it's :active, opacity 1 and show it.
+
+
+
+
+
+*/
+.sec__card--check{
+    /*@include checkicon; */
+    opacity: 0; /*0 no display ,1 display on*/
+    background-color: #99e2d0;  /*$color-tertiary*/
+    height: 100%;
+    color: #fff;
+    margin-left: auto;
+    padding: 0 15px 0 15px;
+    border-radius: 0 15px 15px 0;
+
+  /*@include flex();  */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 
 
 }

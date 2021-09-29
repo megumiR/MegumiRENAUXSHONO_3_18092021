@@ -68,9 +68,9 @@ $flex-wrap: wrap;
 .catchyimg{
     object-fit: cover;
     &--size{
-        width: 100%;
+        width: 100%; 
         height: 10rem;
-        @media all and (min-width:700px) and (max-width:1200px){
+        @media all and (min-width:1024px){
             height: 18rem; 
         }
     }
@@ -82,6 +82,7 @@ $flex-wrap: wrap;
     margin-top: -40px;
     padding-bottom: 50px;
 
+/*    animation: 800ms 250ms both;*/
     &--bgcolor{
         background-color: #f2f2f2; /*background doesnt wanna be on top*/
     }
@@ -91,7 +92,21 @@ $flex-wrap: wrap;
     &__header{
         @include flex($justifyCo-saround);
     }
+
 } 
+
+/*appears block by block*/
+.secEntrees{  
+    animation: 300ms ease-in 50ms;
+    
+}
+.secPlats{
+    
+}
+.secDesserts{
+
+}
+
 
 /*section*/
 $fontweight-secTitle: 500;
@@ -132,16 +147,6 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 
 
 
-/*appears block by block*/
-.secEntrees{  
-
-}
-.secPlats{
-
-}
-.secDesserts{}
-
-
 /*section cards positon setting*/
 .sec{
     &--position{
@@ -179,7 +184,7 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         @include secCard;
         
         &:hover + .sec__card--checked{
-            transform: translate(100px, 0);
+            transform: scale(1.2);
         }
         &--notchecked{
             z-index: 1;
@@ -228,21 +233,25 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
     &__button{
         @include flex();
         cursor: pointer;   
-        
-        &--color{
-        background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
-        color: #fff;
+        transition: transform 200ms 50ms;
+        &:hover{
+            transform: scale(1.03);
         }
-    }
-    &--shape{
-        width: 180px;
-        height: 2.5rem;
-        border-radius: 20px;
-        border: none;
-        text-decoration: none;
-    }
-    &--shadow{
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+
+        &--color{
+            background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
+            color: #fff;
+        }
+        &--shape{
+            width: 180px;
+            height: 2.5rem;
+            border-radius: 20px;
+            border: none;
+            text-decoration: none;
+        }
+        &--shadow{
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+        }
     }        
 }
 

@@ -48,7 +48,7 @@ body{
 }
 h2{
     font-family: $fontfamily-logoTitle;
-    text-transform: uppercase;
+/*    text-transform: uppercase;*/
 }
 
 $position: center;
@@ -75,22 +75,24 @@ $flex-wrap: wrap;
     width: 100%;
     @include flex;
 
+    box-shadow: 1px 0 0 0 #383838;  /*??????????????*/
     &__logo{
         width: 220px;  /*CHANGE LATER*/
         height: auto;
-        
+
         padding:  20px 20px 20px 20px;
+        @media all and (min-width:1024px) {
+            width: 30%;
+        }
     }
 }
 /*nav*/
 .nav{
     height: 3rem;
-    box-shadow: 0 0 0 1px #000; /*??????????????*/
     @include flex;
 
-    &--bordershadow{
-        border-top:rgba(0, 0, 0, .10);
-        /*boxshadow?*/
+    &--bgcolor{
+        background-color: rgba(0, 0, 0, .10);
     }
     &__icon--color{
         color: rgba(0, 0, 0, .75);
@@ -100,11 +102,17 @@ $flex-wrap: wrap;
         height: 100%;
         &--border{
             border: none;
+            &:active{
+                border: #fff;  /* ca ne marche pas???*/
+            }
         }
         &--size{
-            background:rgba(0, 0, 0, .03);  /*??????????????*/
+            background-color: transparent;
             height: 100%;
             width: 200px;  
+        }
+        &--bgcolor{
+            background-color: transparent;
         }
     }
 }
@@ -134,12 +142,16 @@ $btn-border-radius: 20px;
 
     &__button{
         cursor: pointer;
-
+        transition: transform 200ms 50ms;
+        &:hover{
+            transform: scale(1.03);
+        }
+        
         &--color{
             background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
             color: #fff;
         }
-        &shape{
+        &--shape{
             width: 180px;
             height: 2.5rem;
             border-radius: $btn-border-radius;
@@ -168,12 +180,14 @@ $btn-border-radius: 20px;
         &--bgcolor{
             background-color: #f2f2f2;
             &:active{
-                background-color: #9356DC; /*opacity* on backcolor not on everything*/
-                opacity: 0.2;
+                background-color: $color-primary darken($color: $color-primary, $amount: 90);
+                 /*opacity* on backcolor not on everything*/
+                
             }
         }
         &--shape{
             width: 350px;
+            max-width: 90%;
             height: 4.5rem;
             border-radius: 20px;
             border: none;
@@ -205,9 +219,7 @@ $btn-border-radius: 20px;
         &--color{
             color: rgba(0, 0, 0, .75);
             &:active{
-                background-color: #9356DC; /*opacity* on backcolor not on everything*/
-                opacity: 0.2;
-            
+                color: $color-primary;
             }
         }
         &--margin{
@@ -241,7 +253,7 @@ $card-border-radius: 20px;
             height: 300px;
             border-radius: $card-border-radius;
 
-            @media all and (min-width:700) and (max-width:1200) { /* tabllete*/
+            @media all and (min-width:1024px) { /* tabllete768?*/
                 width: 40%;
                 height: 350px;
             }
@@ -271,22 +283,43 @@ $card-border-radius: 20px;
             margin-left: auto;
         }
         &--icon{
+            @include flex;
             /*position exactry the same place*/
+            position: relative;
+            height: 45px;
+
+            transition: transform 400ms ease-in-out 50ms, opacity 300ms 100ms;
+            transform-origin: center;
             &:hover{
                 cursor: pointer;
+                transform: scale(1.2);
+                opacity: 0;
+            } /*
+            &:not(hover) + .art__card--iconNocolor{
+                opacity: 1;*/
             }
             &:active{
-                display: none;
-            }
-            &:active --iconcolor{    /*animation !!!!*/
-                opacity: 1;
-            }
-        }
-        &--iconcolor{
-            opacity: 0;
-            color: #FF79DA;
-        }
+                &.art__card--iconcolor{
+                    transform: rotate(1turn);
+                    opacity: 1;
+                }
+            }     /*animation !!!!*/
+                
 
+/*??????????????????????????*/
+
+        }
+        &--iconposition{
+            position: absolute;
+            right: 1rem;
+           
+        }
+        &--iconcolor{/*
+            opacity: 0;*/
+            color: #FF79DA;
+            transform: rotate(-1turn);
+            transition: transform 500ms ease-in-out, opacity 250ms;
+        }
     }
 }
 

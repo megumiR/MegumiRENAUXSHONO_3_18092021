@@ -66,10 +66,12 @@ $flex-wrap: wrap;
 
 /*div img*/
 .catchyimg{
-    object-fit: cover;
+    background-image: url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
     &--size{
         width: 100%; 
-        height: 10rem;
+        height: 14rem;
         @media all and (min-width:1024px){
             height: 18rem; 
         }
@@ -87,7 +89,7 @@ $flex-wrap: wrap;
         background-color: #f2f2f2; /*background doesnt wanna be on top*/
     }
     &--border{
-        border-radius: 20px 20px 0 0;
+        border-radius: 50px 50px 0 0;
     }
     &__header{
         @include flex($justifyCo-saround);
@@ -257,16 +259,17 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 
 
 /*footer*/
+$footerTextcolor: #fff;
 
 .footer{
     &--textmargin{
     margin: 0;
     }
     &--textcolor {
-        color: #fff;
+        color: $footerTextcolor;
     }
     &--textcolor a {
-        color: #fff;
+        color: $footerTextcolor;
     }
     &--bgcolor{
         background-color: #484848;
@@ -281,6 +284,11 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         }
         &--padding{
             padding: 5px 0 5px 0;
+        }
+    }
+    &__listicon{
+        &--width{
+            width: 26px;
         }
     }
 }

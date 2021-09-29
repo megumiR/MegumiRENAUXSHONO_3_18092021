@@ -144,7 +144,10 @@ $btn-border-radius: 20px;
         cursor: pointer;
         transition: transform 200ms 50ms;
         &:hover{
-            transform: scale(1.03);
+            transform: scale(1.03); 
+/*Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
+            L’ombre portée devra également être plus visible.
+            */
         }
         
         &--color{
@@ -233,6 +236,8 @@ $btn-border-radius: 20px;
 /*$paddingMain: (50px 20px 50px 20px);*/
 $card-border-radius: 20px;
 
+
+
 .art{
     &--bgcolor{
         background-color: #f2f2f2;
@@ -275,9 +280,23 @@ $card-border-radius: 20px;
             display: flex;
             margin-left: 15px;
             margin-top: 10px;
+
+            transition: transform 400ms 50ms;
+            &:hover{             
+                cursor: pointer;
+                transform: scale(1.05);
+            }
         }
         &--textmargin{
             margin: 0;
+        }
+        &--textdeco{
+            text-decoration: none;
+            list-style-type: none;
+            color: #000;
+        }
+        &--textdeco a{
+            color: #000;
         }
         &--iconmargin{
             margin-left: auto;
@@ -288,19 +307,18 @@ $card-border-radius: 20px;
             position: relative;
             height: 45px;
 
-            transition: transform 400ms ease-in-out 50ms, opacity 300ms 100ms;
+            transition: transform 400ms ease-in-out 50ms, opacity 350ms 100ms;
             transform-origin: center;
             &:hover{
                 cursor: pointer;
                 transform: scale(1.2);
                 opacity: 0;
-            } /*
+            }
             &:not(hover) + .art__card--iconNocolor{
                 opacity: 1;
-            }*/
+            }
             &:active{
                 &.art__card--iconcolor{
-                    transform: rotate(1turn);
                     opacity: 1;
                 }
             }     /*animation !!!!*/
@@ -315,10 +333,10 @@ $card-border-radius: 20px;
            
         }
         &--iconcolor{
-            /*opacity: 0;*/
+            opacity: 0;
             color: #FF79DA;
             transform: rotate(-1turn);
-            transition: transform 500ms ease-in-out, opacity 250ms;
+            transition: opacity 250ms;
         }
     }
 }
@@ -350,6 +368,11 @@ $footerTextcolor: #fff;
         }
         &--padding{
             padding: 5px 0 5px 0;
+        }
+    }
+    &__listicon{
+        &--width{
+            width: 26px;
         }
     }
 }

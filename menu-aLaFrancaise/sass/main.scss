@@ -46,7 +46,8 @@ $flex-wrap: wrap;
     @include flex;
 
     &__logo{
-        width: 220px; 
+        min-width: 220px;
+        max-width: 20%;
         height: auto;
         padding: 20px 20px 20px 20px;
         &--order{
@@ -55,6 +56,12 @@ $flex-wrap: wrap;
     }
     &__icon{
         cursor: pointer;
+        &--color {
+            color: #000;
+        }
+        &--color a{   /*doesnt work today*/
+            color: #000;
+        }
         &--order{
             order: 1;
         }

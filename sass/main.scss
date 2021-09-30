@@ -77,7 +77,8 @@ $flex-wrap: wrap;
 
     box-shadow: 1px 0 0 0 #383838;  /*??????????????*/
     &__logo{
-        width: 220px;  /*CHANGE LATER*/
+        min-width: 220px;
+        max-width: 20%;  
         height: auto;
 
         padding:  20px 20px 20px 20px;
@@ -147,6 +148,16 @@ $btn-border-radius: 20px;
             transform: scale(1.03); 
 /*Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
             L’ombre portée devra également être plus visible.
+
+mainscss menu1---> but didnt work
+             transition: transform 200ms 50ms, background-image 800ms 100ms;
+        &:hover{
+            transform: scale(1.03);
+        
+            & +.art__button--color{
+                filter: brightness(120%);/*
+            background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
+        */}
             */
         }
         
@@ -313,15 +324,17 @@ $card-border-radius: 20px;
                 cursor: pointer;
                 transform: scale(1.2);
                 opacity: 0;
+            
+                & +.art__card--iconcolor{
+                    opacity: 1;
+                }
             }
             &:not(hover) + .art__card--iconNocolor{
                 opacity: 1;
             }
-            &:active{
-                &.art__card--iconcolor{
-                    opacity: 1;
-                }
-            }     /*animation !!!!*/
+ /*           &:active{
+               
+            }     *//*animation !!!!*/
                 
 
 /*??????????????????????????*/
@@ -336,7 +349,7 @@ $card-border-radius: 20px;
             opacity: 0;
             color: #FF79DA;
             transform: rotate(-1turn);
-            transition: opacity 250ms;
+/*            transition: opacity 250ms;*/
         }
     }
 }

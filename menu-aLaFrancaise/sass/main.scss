@@ -155,24 +155,7 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     min-height: 280px;
     }
-    &__card{
-        &--1stposition{
-        position: absolute;
-        top: 40px;
-        width: 95%;
-        }
-        &--2ndposition{
-        position: absolute;
-        top: 110px;
-        width: 95%;
-        }
-        &--3rdposition{
-        position: absolute;
-        top: 180px;
-        width: 95%;
-        }
-    }
-/*title deco*/
+    /*title deco*/
     &__title{    
         @include secTitle();
 
@@ -184,10 +167,40 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 
     &__card{
         @include secCard;
-        
+        cursor: pointer;
+        transition: transform 500ms ease-in 50ms;
         &:hover + .sec__card--checked{
             transform: scale(1.2);
+            opacity: 0;
         }
+
+
+        height: auto;
+        @media all and (max-width:370px) {
+            height: 81px;
+            }
+
+        &--1stposition{
+        position: absolute;
+        top: 40px;
+        width: 95%;
+        }
+        &--2ndposition{
+        position: absolute;
+        top: 110px;
+        width: 95%;
+        @media all and (max-width:370px) {
+            top: 128px;
+            }
+        }
+        &--3rdposition{
+        position: absolute;
+        top: 180px;
+        width: 95%;
+        @media all and (max-width:370px) {
+            top: 195px;
+            }
+        }        
         &--notchecked{
             z-index: 1;
         }
@@ -211,8 +224,16 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         }
         &--textflex{
             @include flexColumn($justifyCo-saround, $default);
-            
+
+            overflow: hidden;
+            width: 100%;
         }
+        &--textwrap{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
         &--padding{
             padding: 10px;
         }

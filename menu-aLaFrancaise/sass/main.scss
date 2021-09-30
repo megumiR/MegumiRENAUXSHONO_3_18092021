@@ -94,7 +94,37 @@ $flex-wrap: wrap;
     &__header{
         @include flex($justifyCo-saround);
     }
+/*article order button at the bottom of page*/
+    &__buttonarea{
+        @include flex();
+    }
+    &__button{
+        @include flex();
+        cursor: pointer;   
+        transition: transform 200ms 50ms, background-image 800ms 100ms;
+        &:hover{
+            transform: scale(1.03);
+        
+            & +.art__button--color{
+                filter: brightness(120%);/*
+            background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
+        */}
 
+        &--color{
+            background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
+            color: #fff;
+        }
+        &--shape{
+            width: 180px;
+            height: 2.5rem;
+            border-radius: 20px;
+            border: none;
+            text-decoration: none;
+        }
+        &--shadow{
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+        }
+    } 
 } 
 
 /*appears block by block*/
@@ -246,38 +276,6 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         }
     }
 }
-
-/*article order button*/
-
-.art{
-    &__buttonarea{
-        @include flex();
-    }
-    &__button{
-        @include flex();
-        cursor: pointer;   
-        transition: transform 200ms 50ms;
-        &:hover{
-            transform: scale(1.03);
-        }
-
-        &--color{
-            background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
-            color: #fff;
-        }
-        &--shape{
-            width: 180px;
-            height: 2.5rem;
-            border-radius: 20px;
-            border: none;
-            text-decoration: none;
-        }
-        &--shadow{
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
-        }
-    }        
-}
-
 
 /*footer*/
 $footerTextcolor: #fff;

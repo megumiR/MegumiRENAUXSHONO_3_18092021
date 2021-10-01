@@ -1,0 +1,275 @@
+/*nav*/
+.nav{
+    height: 3rem;
+    @include flex;
+
+    &--bgcolor{
+        background-color: rgba(0, 0, 0, .10);
+    }
+    &__icon--color{
+        color: rgba(0, 0, 0, .75);
+    }
+    &__searchfield{
+        margin-left: 1rem;
+        height: 100%;
+        &--border{
+            border: none;
+            &:active{
+                border: #fff;  /* ca ne marche pas???*/
+            }
+        }
+        &--size{
+            background-color: transparent;
+            height: 100%;
+            width: 200px;  
+        }
+        &--bgcolor{
+            background-color: transparent;
+        }
+    }
+}
+
+/*aside*/
+$paddingMain: 50px 20px 50px 20px;
+$btn-border-radius: 20px;
+
+.aside{
+    @include flexColumn();
+
+    &--bgcolor{
+        background-color: #f2f2f2;
+    }
+    &--padding{
+        padding: $paddingMain;
+    }
+    &--text-align{
+        text-align: center;
+    }
+    &__title{
+        width: 75%;
+        &--margin{
+            margin: 0;
+        }
+    }
+
+    &__button{
+        cursor: pointer;
+        transition: transform 200ms 50ms;
+        &:hover{
+            transform: scale(1.03); 
+
+/*Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
+            L’ombre portée devra également être plus visible.
+
+mainscss menu1---> but didnt work
+             transition: transform 200ms 50ms, background-image 800ms 100ms;
+        &:hover{
+            transform: scale(1.03);
+        
+            & + .art__button--color{
+                filter: brightness(120%);/*
+            background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
+            
+            
+        }
+        
+        &--color{
+            background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
+            color: #fff;
+        }
+        &--shape{
+            width: 180px;
+            height: 2.5rem;
+            border-radius: $btn-border-radius;
+            border: none;
+            text-decoration: none;
+        }        
+        &--shadow{
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+}
+
+/*article*/
+/*$paddingMain: (50px 20px 50px 20px);*/
+
+
+.block-howto{
+    @include flexColumn;
+    
+    &--padding{
+        padding: $paddingMain; /*same as aside*/
+    }
+    &__card{
+        @include flex($justifyCo-fstart);
+        cursor: pointer;
+        
+        transition: transform 400ms 50ms, background-color 600ms 100ms;
+        &--bgcolor{
+            background-color: #f2f2f2;
+            &:hover{
+                transform: scale(0.9);
+                background-color: $color-primary darken($color: $color-primary, $amount: 90);
+                 /*opacity* on backcolor not on everything*/
+                
+            }
+        }
+        &--shape{
+            width: 350px;
+            max-width: 90%;
+            height: 4.5rem;
+            border-radius: 20px;
+            border: none;
+        } 
+        &--shadow{
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+        }
+        &--margin{
+            margin: 20px 0 20px 0;
+        }
+    }
+    &__number{
+        &--color{
+        background-color: #9356DC;
+        color: #fff;
+        }
+        &--shape{
+            width: 1.1rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            padding-top: 5px;
+            padding-left: 9px;
+        }
+        &--margin{
+            margin-left: -15px;
+        }
+    }
+    &__icon{
+        &--color{
+            color: rgba(0, 0, 0, .75);
+            &:hover{
+                color: $color-primary;
+            }
+        }
+        &--margin{
+            margin: 0 20px 0 20px;
+        }
+    }
+}
+    
+
+/*section restaurants*/
+/*$paddingMain: (50px 20px 50px 20px);*/
+$card-border-radius: 20px;
+
+
+
+.art{
+    &--bgcolor{
+        background-color: #f2f2f2;
+    }
+    &--padding{
+        padding: $paddingMain;    
+    }
+    &--flex{
+        @include flex();
+        flex-wrap: $flex-wrap;
+    }
+    &__card{
+        @include flexColumn($justifyCo-fstart);
+        flex-wrap: $flex-wrap;
+
+        &--shape{
+            width: 94%;
+            height: 300px;
+            border-radius: $card-border-radius;
+
+            @media all and (min-width:1024px) { /* tabllete768?*/
+                width: 40%;
+                height: 350px;
+            }
+        }
+        &--bgcolor{
+            background-color: #fff;
+        }
+        &--margin{
+            margin: 0px 20px 20px 0px;
+        }
+        &--imgsize{
+            width: 100%;
+            height: 75%;
+            object-fit: cover;
+            border-radius: $card-border-radius $card-border-radius 0 0;
+        }
+        &--text{
+            width: 90%;
+            display: flex;
+            margin-left: 15px;
+            margin-top: 10px;
+
+            transition: transform 400ms 50ms;
+            &:hover{             
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+        }
+        &--textmargin{
+            margin: 0;
+        }
+        &--textdeco{
+            text-decoration: none;
+            list-style-type: none;
+            color: #000;
+        }
+        &--textdeco a{
+            color: #000;
+        }
+        &--iconmargin{
+            margin-left: auto;
+        }
+        &--icon{
+            @include flex;
+            /*position exactry the same place*/
+            position: relative;
+            height: 45px;
+
+            transition: transform 500ms ease-out;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+            /*
+            &:hover + .art__card--iconNocolor{
+                
+            }/*
+            &:active + .art__card--iconcolor{
+                opacity: 1;
+                cursor: pointer;
+                transform: scale(1.2);
+            } */
+        }
+        &--iconposition{
+            position: absolute;
+            right: 1rem;  
+        }
+        &--iconNocolor{
+           /* transform-origin: center;*/
+           /* transform: scale(1);*/       
+            transition: opacity 350ms 100ms;
+            &:hover{
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+        &--iconcolor{
+            opacity: 0;
+            color: #FF79DA;
+/*            transform-origin: right bottom;*/
+            transition: opacity 1000ms ease-in 40ms;
+            &:hover{
+                opacity: 0.8;
+               
+            }
+        }
+    }
+}

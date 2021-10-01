@@ -1,4 +1,4 @@
-$fontfamily-text: Roboto, sans-serif;
+/*$fontfamily-text: Roboto, sans-serif;
 $fontfamily-logoTitle: Shrikhand, serif;
 
 $color-primary: #9356DC;
@@ -13,17 +13,16 @@ $width: device-width;
 body{
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif; /* $fontfamily-text;  */
-}
+    font-family: "Roboto", sans-serif;} /* $fontfamily-text;  */
+/*
 h2{
-    font-family: Shrikhand, serif; /* $fontfamily-logoTitle; */
-}
+    font-family: Shrikhand, serif;} /* $fontfamily-logoTitle; */
 
-/*header*/
+    /*header*//*
 $position: center;
 $default: stretch;
 $justifyCo-center: center;
-$justifyCo-fstart: flex-start; /*default value*/
+$justifyCo-fstart: flex-start; /*default value*//*
 $justifyCo-saround: space-around;
 
 $flex-wrap: wrap;
@@ -39,7 +38,7 @@ $flex-wrap: wrap;
     justify-content: $justifyCo;
     align-items: $align-item;
 }
-
+*/
 
 .header{
     width: 100%;
@@ -73,7 +72,7 @@ $flex-wrap: wrap;
 
 /*div img*/
 .catchyimg{
-    background-image: url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+    background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
     background-size: cover;
     background-position: center;
     &--size{
@@ -112,14 +111,15 @@ $flex-wrap: wrap;
         &:hover{
             transform: scale(1.03);
         
-            & +.art__button--color{
+            & + .art__button--color{
                 filter: brightness(120%);/*
             background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
-        */}
+        }
 
         &--color{
             background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
             color: #fff;
+            transition: filter 400ms ease-in 50ms;
         }
         &--shape{
             width: 180px;
@@ -134,7 +134,7 @@ $flex-wrap: wrap;
     } 
 } 
 
-/*appears block by block*/
+/*appears block by block*//*
 .secEntrees{  
     animation: 300ms ease-in 50ms;
     
@@ -145,7 +145,7 @@ $flex-wrap: wrap;
 .secDesserts{
 
 }
-
+*/
 
 /*section*/
 $fontweight-secTitle: 500;
@@ -261,7 +261,6 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         }
         &--textflex{
             @include flexColumn($justifyCo-saround, $default);
-
             overflow: hidden;
             width: 100%;
         }
@@ -282,39 +281,4 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
             @include flex();
         }
     }
-}
-
-/*footer*/
-$footerTextcolor: #fff;
-
-.footer{
-    &--textmargin{
-    margin: 0;
-    }
-    &--textcolor {
-        color: $footerTextcolor;
-    }
-    &--textcolor a {
-        color: $footerTextcolor;
-    }
-    &--bgcolor{
-        background-color: #484848;
-    }
-    &--padding{
-        padding: 30px 0 30px 18px;
-    }
-    &__list{
-        &--deco{
-        text-decoration: none;
-        list-style-type: none;
-        }
-        &--padding{
-            padding: 5px 0 5px 0;
-        }
-    }
-    &__listicon{
-        &--width{
-            width: 26px;
-        }
-    }
-}
+}}

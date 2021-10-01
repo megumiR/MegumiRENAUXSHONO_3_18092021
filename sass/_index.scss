@@ -1,3 +1,36 @@
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 15s;  /*Show in all the screen and then all desappear*/
+    z-index: 9999;
+    &::after{
+    content: "";
+    width: 3em;
+    height: 3em;
+    border: 10px dotted #f2f2f2;
+    border-top-color: #9356DC;
+    border-right-color: #FF79DA;
+    border-bottom-color: #99E2D0;
+    border-radius: 50%;
+    animation: loading 3s linear infinite;
+    }
+    &--fullHeight{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 13rem;
+    background-color: #383838;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
 /*nav*/
 .nav{
     height: 3rem;
@@ -272,4 +305,4 @@ $card-border-radius: 20px;
             }
         }
     }
-}
+}}

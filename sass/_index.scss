@@ -1,43 +1,57 @@
-
+/*
 .loading{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 15s;  /*Show in all the screen and then all desappear*/
+    transition: animation 2s;  
     z-index: 9999;
     &::after{
     content: "";
-    width: 3em;
-    height: 3em;
-    border: 10px dotted #f2f2f2;
+    width: 16em;
+    height: 16em;
+    border: 18px dotted #FF79DA;
     border-top-color: #9356DC;
     border-right-color: #FF79DA;
-    border-bottom-color: #99E2D0;
+    border-bottom-color: #9356DC;
     border-radius: 50%;
-    animation: loading 3s linear infinite;
+    
+    animation: loading 2s cubic-bezier(0.445, 0, 0.55,1);
     }
     &--fullHeight{
     position: fixed;
     top: 0;
     left: 0;
-    width: 500px;
-    height: 13rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
     background-color: #383838;
+
+    transition: all 50ms 1950ms;
+    &::after{
+        opacity: 0;                  
+        z-index: -9999;
+        }                          
+    }
 }
 
 @keyframes loading {
     to {
-        transform: rotate(1turn);
+        transform: rotate(1turn), scale(2);
     }
-}
-
+    from{
+        transform: rotate(-1turn);
+    }
+}  
+*/
 /*nav*/
+$nav-bgcolor: rgba(0, 0, 0, .10);
 .nav{
     height: 3rem;
     @include flex;
 
     &--bgcolor{
-        background-color: rgba(0, 0, 0, .10);
+        background-color: $nav-bgcolor;
     }
     &__icon--color{
         color: rgba(0, 0, 0, .75);
@@ -46,9 +60,13 @@
         margin-left: 1rem;
         height: 100%;
         &--border{
-            border: none;
+            border: 1px solid $nav-bgcolor;
+            outline: none;
             &:active{
-                border: #fff;  /* ca ne marche pas???*/
+                border: 1px solid #fff;  /* ca ne marche pas???*/
+            }
+            &:focus{
+                border: 1px solid #fff;  /* ca ne marche pas???*/
             }
         }
         &--size{
@@ -65,6 +83,7 @@
 /*aside*/
 $paddingMain: 50px 20px 50px 20px;
 $btn-border-radius: 20px;
+
 
 .aside{
     @include flexColumn();
@@ -86,11 +105,16 @@ $btn-border-radius: 20px;
     }
 
     &__button{
+        color: #fff;
         cursor: pointer;
         transition: transform 200ms 50ms;
         &:hover{
-            transform: scale(1.03); 
-
+            /*
+            &::after{*/
+            & + .art__button--color{
+                opacity: 1;
+                background-image: linear-gradient(to bottom right, lighten(#FF79DA, 5) 0%, lighten(#9356DC, 5) 100%);
+            }
 /*Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
             L’ombre portée devra également être plus visible.
 
@@ -104,11 +128,13 @@ mainscss menu1---> but didnt work
             background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
             
             
-        }
+        }  /*
+        &::after{
+            
+        }  */
+        &--color{ 
+            background-image: linear-gradient(to bottom right,#FF79DA 0%, lighten#9356DC 100%);
         
-        &--color{
-            background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
-            color: #fff;
         }
         &--shape{
             width: 180px;
@@ -305,4 +331,4 @@ $card-border-radius: 20px;
             }
         }
     }
-}}
+}

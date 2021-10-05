@@ -91,10 +91,20 @@ $flex-wrap: wrap;
     padding-bottom: 50px;
 
 /*    animation: 800ms 250ms both;*/
-    &:hover + .secEntrees .secPlats .secDesserts{
+    &:hover + .secEntrees{
         opacity: 1;    
         transform: translateY(0);
     }
+    &:hover + .secPlats{
+        opacity: 0;    
+        transform: translateY(150%);
+    }
+    &:hover + .secDesserts{
+        opacity: 0;    
+        transform: translateY(200%);
+    }
+
+
 
     &--bgcolor{
         background-color: #f2f2f2; /*background doesnt wanna be on top*/
@@ -114,29 +124,16 @@ $flex-wrap: wrap;
     }
     &__button{
         @include flex();
-
-  
         color: #fff;
         cursor: pointer;   
         transition: transform 300ms 50ms;
-      /*  &:hover{
-            transform: scale(1.5);
-    */ /*   
-            & + .art__button--color{
-                background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
-                opacity: 1;
-              /*  filter: brightness(120%);
-            background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
-       /* }*/
-
         &--color{
-            background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
-        
+            background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);     
             &:hover{
                 background-image: linear-gradient(to bottom right, lighten($color-secondary, 5) 0%, lighten($color-primary, 5) 100%);  
                 opacity: 1;    
             }
-        }
+        }/*
         &::after{
             position: absolute;
             top: 0;
@@ -148,7 +145,7 @@ $flex-wrap: wrap;
             opacity: 0;
             z-index: -1;
             transition: opacity 250ms;             
-        }
+        }*/
         &--shape{
             width: 180px;
             height: 2.5rem;
@@ -173,24 +170,24 @@ $flex-wrap: wrap;
 /*appears block by block*/
 
 .secEntrees{
-    transform: translateY(0); 
+    transform: translateY(50%); 
     transform-origin: bottom;
-    opacity: 1; 
-    transition: all 230ms ease-in-out 50ms; 
+    opacity: 0; 
+    transition: all 2000ms ease-in-out 50ms; 
     
 }
 .secPlats{
-    transform: translateY(350%);
-    transform-origin: center;
+    transform: translateY(0);
+    transform-origin: bottom;
     opacity: 1; 
-    transition: all 330ms ease-in-out 100ms;
+    transition: all 2500ms ease-in-out 100ms;
     
 }
 .secDesserts{
-    transform: translateY(450%);
-    transform-origin: left;
+    transform: translateY(0);
+    transform-origin: bottom;
     opacity: 1; 
-    transition: all 430ms ease-in-out 180ms;
+    transition: all 3000ms ease-in-out 180ms;
 
 }
 

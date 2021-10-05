@@ -109,11 +109,18 @@ $btn-border-radius: 20px;
         color: #fff;
         cursor: pointer;
             /*  &::after normally works too*/
-        &--color{ 
+  /*      &--color{ 
             background-image: linear-gradient(to bottom right,#FF79DA 0%, #9356DC 100%);
             &:hover{
                 opacity: 1;
                 background-image: linear-gradient(to bottom right, lighten(#FF79DA, 5) 0%, lighten(#9356DC, 5) 100%);
+            }
+        }    */
+        &--color{
+            background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);     
+            &:hover{
+                background-image: linear-gradient(to bottom right, lighten($color-secondary, 5) 0%, lighten($color-primary, 5) 100%);  
+                opacity: 1;    
             }
         }
         &--shape{

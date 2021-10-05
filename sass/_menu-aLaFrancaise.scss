@@ -114,9 +114,57 @@ $flex-wrap: wrap;
     }
     &__header{
         @include flex($justifyCo-saround);
-
-
+        margin: 20px 50px;
     }
+    &--iconmargin{
+        margin-left: auto;
+    }
+    &--icon{
+        @include flex;
+        /*position exactry the same place*/
+        position: relative;
+        height: 45px;
+
+        transition: transform 500ms ease-out;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+        /*
+        &:hover + .art__card--iconNocolor{
+            
+        }/*
+        &:active + .art__card--iconcolor{
+            opacity: 1;
+            cursor: pointer;
+            transform: scale(1.2);
+        } */
+    }
+    &--iconposition{
+        position: absolute;
+        right: 1rem;  
+    }
+    &--iconNocolor{
+       /* transform-origin: center;*/
+       /* transform: scale(1);*/       
+        transition: opacity 350ms 100ms;
+        &:hover{
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    }
+    &--iconcolor{
+        opacity: 0;
+        color: $color-secondary;
+/*            transform-origin: right bottom;*/
+        transition: opacity 1000ms ease-in 40ms;
+        &:hover{
+            opacity: 0.8;
+           
+        }
+    }
+
+
 /*article order button at the bottom of page*/
 
     &__buttonarea{

@@ -120,15 +120,15 @@ $flex-wrap: wrap;
         color: #fff;
         cursor: pointer;   
         transition: transform 300ms 50ms;
-        &:hover{
+      /*  &:hover{
             transform: scale(1.5);
-     /*   
+    */ /*   
             & + .art__button--color{
                 background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
                 opacity: 1;
               /*  filter: brightness(120%);
             background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
-        }
+       /* }*/
 
         &--color{
             background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
@@ -164,24 +164,25 @@ $flex-wrap: wrap;
 } 
 
 /*appears block by block*/
+
 .secEntrees{
     transform: translateY(0); 
     transform-origin: bottom;
-    opacity: 0; 
+    opacity: 1; 
     transition: all 230ms ease-in-out 50ms; 
     
 }
 .secPlats{
     transform: translateY(350%);
     transform-origin: center;
-    opacity: 0; 
+    opacity: 1; 
     transition: all 330ms ease-in-out 100ms;
     
 }
 .secDesserts{
     transform: translateY(450%);
     transform-origin: left;
-    opacity: 0; 
+    opacity: 1; 
     transition: all 430ms ease-in-out 180ms;
 
 }

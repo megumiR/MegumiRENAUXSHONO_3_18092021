@@ -259,18 +259,9 @@ h2 {
 .aside__button {
   color: #fff;
   cursor: pointer;
-  -webkit-transition: -webkit-transform 200ms 50ms;
-  transition: -webkit-transform 200ms 50ms;
-  transition: transform 200ms 50ms;
-  transition: transform 200ms 50ms, -webkit-transform 200ms 50ms;
-  /*
-        &::after{
+  /*        transition: transform 200ms 50ms;
+        &:hover{
             
-        }  */
-}
-
-.aside__button:hover {
-  /*
             &::after{
             & + .art__button--color{
                 opacity: 1;
@@ -287,11 +278,17 @@ mainscss menu1---> but didnt work
             & + .art__button--color{
                 filter: brightness(120%);/*
             background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
+  /*
+            
+        }  
+        &::after{
+            
+        }  */
 }
 
 .aside__button--color {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), color-stop(#9356DC, lighten));
-  background-image: linear-gradient(to bottom right, #FF79DA 0%, lighten #9356DC 100%);
+  /*    background-image: linear-gradient(to bottom right,#FF79DA 0%, lighten#9356DC 100%);
+        */
 }
 
 .aside__button--color:hover {

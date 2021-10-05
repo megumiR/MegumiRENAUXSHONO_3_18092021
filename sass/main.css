@@ -271,8 +271,12 @@ h2 {
 
 .aside__button:hover {
   /*
-            &::after{*/
-  /*Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
+            &::after{
+            & + .art__button--color{
+                opacity: 1;
+                background-image: linear-gradient(to bottom right, lighten(#FF79DA, 5) 0%, lighten(#9356DC, 5) 100%);
+            }
+/*Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
             L’ombre portée devra également être plus visible.
 
 mainscss menu1---> but didnt work
@@ -285,15 +289,15 @@ mainscss menu1---> but didnt work
             background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
 }
 
-.aside__button:hover + .art__button--color {
-  opacity: 1;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff93e1), to(#a16be0));
-  background-image: linear-gradient(to bottom right, #ff93e1 0%, #a16be0 100%);
-}
-
 .aside__button--color {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), color-stop(#9356DC, lighten));
   background-image: linear-gradient(to bottom right, #FF79DA 0%, lighten #9356DC 100%);
+}
+
+.aside__button--color:hover {
+  opacity: 1;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff93e1), to(#a16be0));
+  background-image: linear-gradient(to bottom right, #ff93e1 0%, #a16be0 100%);
 }
 
 .aside__button--shape {
@@ -305,6 +309,14 @@ mainscss menu1---> but didnt work
 }
 
 .aside__button--shadow {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition: opacity 300ms 50ms;
+  transition: opacity 300ms 50ms;
+}
+
+.aside__button--shadow:hover {
+  opacity: 1;
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -324,6 +336,15 @@ mainscss menu1---> but didnt work
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media all and (min-width: 1024px) {
+  .block-howto {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .block-howto--padding {
@@ -365,6 +386,12 @@ mainscss menu1---> but didnt work
   height: 4.5rem;
   border-radius: 20px;
   border: none;
+}
+
+@media all and (min-width: 1024px) {
+  .block-howto__card--shape {
+    width: 270px;
+  }
 }
 
 .block-howto__card--shadow {
@@ -693,22 +720,12 @@ $flex-wrap: wrap;
   padding-bottom: 50px;
   /*    animation: 800ms 250ms both;*/
   /*article order button at the bottom of page*/
-  /*appears block by block*/
-  /*
-.secEntrees{  
-    animation: 300ms ease-in 50ms;
-    
 }
-.secPlats{
-    
-}
-.secDesserts{
 
-}
-*/
-  /*section*/
-  /*$card-transition: ;  */
-  /*section cards positon setting*/
+.art:hover + .secEntrees .secPlats .secDesserts {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .art--bgcolor {
@@ -753,71 +770,119 @@ $flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: none;
+  text-decoration: none;
+  color: #fff;
   cursor: pointer;
-  -webkit-transition: background-image 800ms 100ms, -webkit-transform 200ms 50ms;
-  transition: background-image 800ms 100ms, -webkit-transform 200ms 50ms;
-  transition: transform 200ms 50ms, background-image 800ms 100ms;
-  transition: transform 200ms 50ms, background-image 800ms 100ms, -webkit-transform 200ms 50ms;
+  -webkit-transition: -webkit-transform 300ms 50ms;
+  transition: -webkit-transform 300ms 50ms;
+  transition: transform 300ms 50ms;
+  transition: transform 300ms 50ms, -webkit-transform 300ms 50ms;
 }
 
 .art__button:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
-}
-
-.art__button:hover + .art__button--color {
-  -webkit-filter: brightness(120%);
-          filter: brightness(120%);
-  /*
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  /*   
+            & + .art__button--color{
+                background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
+                opacity: 1;
+              /*  filter: brightness(120%);
             background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
 }
 
-.art__button:hover--color {
+.art__button--color {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
   background-image: linear-gradient(to bottom right, #FF79DA 0%, #9356DC 100%);
-  color: #fff;
-  -webkit-transition: -webkit-filter 400ms ease-in 50ms;
-  transition: -webkit-filter 400ms ease-in 50ms;
-  transition: filter 400ms ease-in 50ms;
-  transition: filter 400ms ease-in 50ms, -webkit-filter 400ms ease-in 50ms;
+  z-index: 1;
 }
 
-.art__button:hover--shape {
+.art__button--color:hover::after {
+  opacity: 1;
+}
+
+.art__button::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  background-image: linear-gradient(to bottom right, white 0%, white 100%);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
+}
+
+.art__button--shape {
   width: 180px;
   height: 2.5rem;
   border-radius: 20px;
-  border: none;
-  text-decoration: none;
 }
 
-.art__button:hover--shadow {
+.art__button--shadow {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.art .sec {
+/*appears block by block*/
+.secEntrees {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  opacity: 0;
+  -webkit-transition: all 230ms ease-in-out 50ms;
+  transition: all 230ms ease-in-out 50ms;
+}
+
+.secPlats {
+  -webkit-transform: translateY(350%);
+          transform: translateY(350%);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  opacity: 0;
+  -webkit-transition: all 330ms ease-in-out 100ms;
+  transition: all 330ms ease-in-out 100ms;
+}
+
+.secDesserts {
+  -webkit-transform: translateY(450%);
+          transform: translateY(450%);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  opacity: 0;
+  -webkit-transition: all 430ms ease-in-out 180ms;
+  transition: all 430ms ease-in-out 180ms;
+}
+
+/*section*/
+/*$card-transition: ;  */
+/*section cards positon setting*/
+.sec {
   /*title deco*/
 }
 
-.art .sec--position {
+.sec--position {
   position: relative;
   min-height: 280px;
 }
 
-.art .sec__title {
+.sec__title {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.3em;
   padding-left: 8px;
 }
 
-.art .sec__title--border {
+.sec__title--border {
   font-style: normal;
   -webkit-text-decoration: underline #99E2D0 3px;
           text-decoration: underline #99E2D0 3px;
 }
 
-.art .sec__card {
+.sec__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -840,82 +905,93 @@ $flex-wrap: wrap;
   transition: -webkit-transform 500ms ease-in 50ms;
   transition: transform 500ms ease-in 50ms;
   transition: transform 500ms ease-in 50ms, -webkit-transform 500ms ease-in 50ms;
+  /*        &:hover + .sec__card--checked{
+            transform: scale(1.2);
+            opacity: 1;
+        }
+*/
   height: auto;
 }
 
-.art .sec__card:hover + .sec__card--checked {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  opacity: 0;
-}
-
 @media all and (max-width: 370px) {
-  .art .sec__card {
+  .sec__card {
     height: 81px;
   }
 }
 
-.art .sec__card--1stposition {
+.sec__card--1stposition {
   position: absolute;
   top: 40px;
   width: 95%;
 }
 
-.art .sec__card--2ndposition {
+.sec__card--2ndposition {
   position: absolute;
   top: 110px;
   width: 95%;
 }
 
 @media all and (max-width: 370px) {
-  .art .sec__card--2ndposition {
+  .sec__card--2ndposition {
     top: 128px;
   }
 }
 
-.art .sec__card--3rdposition {
+.sec__card--3rdposition {
   position: absolute;
   top: 180px;
   width: 95%;
 }
 
 @media all and (max-width: 370px) {
-  .art .sec__card--3rdposition {
+  .sec__card--3rdposition {
     top: 195px;
   }
 }
 
-.art .sec__card--notchecked {
+.sec__card--notchecked {
   z-index: 1;
 }
 
-.art .sec__card--notcheckedSize {
+.sec__card--notcheckedSize {
   width: 100%;
   padding-right: 20px;
 }
 
-.art .sec__card--checked {
+.sec__card--checked {
   z-index: 2;
-  visibility: collapse;
-  /*opacity: 0;   0-no display ,1-display on*/
+  /*          visibility: collapse;*/
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transform-origin: right 50%;
+          transform-origin: right 50%;
+  -webkit-transition: all 330ms ease-in 50ms;
+  transition: all 330ms ease-in 50ms;
 }
 
-.art .sec__card--margin {
+.sec__card--checked:hover {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.sec__card--margin {
   margin: 0 5px 0 5px;
 }
 
-.art .sec__card--textmargin {
+.sec__card--textmargin {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.art .sec__card--pricemargin {
+.sec__card--pricemargin {
   margin-left: auto;
 }
 
-.art .sec__card--textflex {
+.sec__card--textflex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -932,21 +1008,21 @@ $flex-wrap: wrap;
   width: 100%;
 }
 
-.art .sec__card--textwrap {
+.sec__card--textwrap {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.art .sec__card--padding {
+.sec__card--padding {
   padding: 10px;
 }
 
-.art .sec__card--textareasize {
+.sec__card--textareasize {
   min-width: 75%;
 }
 
-.art .sec__card--check {
+.sec__card--check {
   background-color: #99E2D0;
   height: 100%;
   color: #fff;

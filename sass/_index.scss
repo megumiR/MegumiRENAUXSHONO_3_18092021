@@ -110,7 +110,7 @@ $btn-border-radius: 20px;
         transition: transform 200ms 50ms;
         &:hover{
             /*
-            &::after{*/
+            &::after{
             & + .art__button--color{
                 opacity: 1;
                 background-image: linear-gradient(to bottom right, lighten(#FF79DA, 5) 0%, lighten(#9356DC, 5) 100%);
@@ -134,7 +134,10 @@ mainscss menu1---> but didnt work
         }  */
         &--color{ 
             background-image: linear-gradient(to bottom right,#FF79DA 0%, lighten#9356DC 100%);
-        
+            &:hover{
+                opacity: 1;
+                background-image: linear-gradient(to bottom right, lighten(#FF79DA, 5) 0%, lighten(#9356DC, 5) 100%);
+            }
         }
         &--shape{
             width: 180px;
@@ -145,6 +148,11 @@ mainscss menu1---> but didnt work
         }        
         &--shadow{
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: opacity 300ms 50ms;
+            &:hover{
+                opacity: 1;
+                box-shadow: 0 8px 16px 0 darken(rgba(0, 0, 0, 0.2), 5), 0 6px 20px 0 darken(rgba(0, 0, 0, 0.19),5);
+            }
         }
     }
 }
@@ -155,6 +163,10 @@ mainscss menu1---> but didnt work
 
 .block-howto{
     @include flexColumn;
+
+    @media all and (min-width:1024px) {
+        flex-direction: row;
+    }
     
     &--padding{
         padding: $paddingMain; /*same as aside*/
@@ -179,6 +191,10 @@ mainscss menu1---> but didnt work
             height: 4.5rem;
             border-radius: 20px;
             border: none;
+        @media all and (min-width:1024px) {
+            width: 270px;
+        }
+        
         } 
         &--shadow{
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  

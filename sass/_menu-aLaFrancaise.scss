@@ -91,6 +91,11 @@ $flex-wrap: wrap;
     padding-bottom: 50px;
 
 /*    animation: 800ms 250ms both;*/
+    &:hover + .secEntrees .secPlats .secDesserts{
+        opacity: 1;    
+        transform: translateY(0);
+    }
+
     &--bgcolor{
         background-color: #f2f2f2; /*background doesnt wanna be on top*/
     }
@@ -99,34 +104,58 @@ $flex-wrap: wrap;
     }
     &__header{
         @include flex($justifyCo-saround);
+
+
     }
 /*article order button at the bottom of page*/
+
     &__buttonarea{
         @include flex();
     }
     &__button{
         @include flex();
+
+        border: none;
+        text-decoration: none;
+        color: #fff;
         cursor: pointer;   
-        transition: transform 200ms 50ms, background-image 800ms 100ms;
+        transition: transform 300ms 50ms;
         &:hover{
-            transform: scale(1.03);
-        
+            transform: scale(1.5);
+     /*   
             & + .art__button--color{
-                filter: brightness(120%);/*
+                background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
+                opacity: 1;
+              /*  filter: brightness(120%);
             background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
         }
 
         &--color{
             background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);
-            color: #fff;
-            transition: filter 400ms ease-in 50ms;
+            z-index: 1;
+        
+            &:hover{
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
+        &::after{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background-image: linear-gradient(to bottom right, lighten($color-secondary,50) 0%, lighten($color-primary,50) 100%);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;             
         }
         &--shape{
             width: 180px;
             height: 2.5rem;
             border-radius: 20px;
-            border: none;
-            text-decoration: none;
         }
         &--shadow{
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
@@ -134,18 +163,31 @@ $flex-wrap: wrap;
     } 
 } 
 
-/*appears block by block*//*
-.secEntrees{  
-    animation: 300ms ease-in 50ms;
+/*appears block by block*/
+.secEntrees{
+    transform: translateY(0); 
+    transform-origin: bottom;
+    opacity: 0; 
+    transition: all 230ms ease-in-out 50ms; 
     
 }
 .secPlats{
+    transform: translateY(350%);
+    transform-origin: center;
+    opacity: 0; 
+    transition: all 330ms ease-in-out 100ms;
     
 }
 .secDesserts{
+    transform: translateY(450%);
+    transform-origin: left;
+    opacity: 0; 
+    transition: all 430ms ease-in-out 180ms;
 
 }
-*/
+
+
+
 
 /*section*/
 $fontweight-secTitle: 500;
@@ -206,11 +248,11 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         @include secCard;
         cursor: pointer;
         transition: transform 500ms ease-in 50ms;
-        &:hover + .sec__card--checked{
+/*        &:hover + .sec__card--checked{
             transform: scale(1.2);
-            opacity: 0;
+            opacity: 1;
         }
-
+*/
 
         height: auto;
         @media all and (max-width:370px) {
@@ -247,7 +289,16 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         }
         &--checked{
             z-index: 2;
-            visibility: collapse; /*opacity: 0;   0-no display ,1-display on*/
+/*          visibility: collapse;*/
+            opacity: 0;  
+
+            transform: translateX(100%);
+            transform-origin: right 50%;
+            transition: all 330ms ease-in 50ms;
+            &:hover{
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
         &--margin{
             margin: 0 5px 0 5px
@@ -281,4 +332,4 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
             @include flex();
         }
     }
-}}
+}

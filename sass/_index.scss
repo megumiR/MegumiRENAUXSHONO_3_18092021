@@ -108,31 +108,7 @@ $btn-border-radius: 20px;
     &__button{
         color: #fff;
         cursor: pointer;
-/*        transition: transform 200ms 50ms;
-        &:hover{
-            
-            &::after{
-            & + .art__button--color{
-                opacity: 1;
-                background-image: linear-gradient(to bottom right, lighten(#FF79DA, 5) 0%, lighten(#9356DC, 5) 100%);
-            }
-/*Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
-            L’ombre portée devra également être plus visible.
-
-mainscss menu1---> but didnt work
-             transition: transform 200ms 50ms, background-image 800ms 100ms;
-        &:hover{
-            transform: scale(1.03);
-        
-            & + .art__button--color{
-                filter: brightness(120%);/*
-            background-image: lighten($color-secondary, 50%);  /* linear-gradient ??????????*/
-            /*
-            
-        }  
-        &::after{
-            
-        }  */
+            /*  &::after normally works too*/
         &--color{ 
             background-image: linear-gradient(to bottom right,#FF79DA 0%, #9356DC 100%);
             &:hover{
@@ -152,7 +128,7 @@ mainscss menu1---> but didnt work
             transition: opacity 300ms 50ms;
             &:hover{
                 opacity: 1;
-                box-shadow: 0 8px 16px 0 darken(rgba(0, 0, 0, 0.4), 5), 0 6px 20px 0 darken(rgba(0, 0, 0, 0.39),5);
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
             }
         }
     }

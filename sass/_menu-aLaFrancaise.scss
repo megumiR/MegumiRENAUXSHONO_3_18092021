@@ -211,10 +211,12 @@ $textDeco-shortline: underline $color-tertiary 3px;
 /*$card-transition: ;  */
 $card-transitionorigin: right;
 $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19); 
-@mixin secCard {
+$mat: #fff;
+$trans: transparent;
+@mixin secCard($bg-clr: $mat) {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: $bg-clr;
     border-radius: 15px;
 
     transition: transform 200ms ease-in 50ms; /*transition in parent part*/
@@ -250,16 +252,17 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
     }
 
     &__card{
-        @include secCard;
         cursor: pointer;
         transition: transform 500ms ease-in 50ms;
-/*        &:hover + .sec__card--checked{
-            transform: scale(1.2);
-            opacity: 1;
+        &:hover + .sec__card--checked{
+                transform: translateX(0);
+                opacity: 1;
         }
-*/
+
 
         height: auto;
+
+
         @media all and (max-width:370px) {
             height: 81px;
             }
@@ -287,12 +290,14 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
         }        
         &--notchecked{
             z-index: 1;
+            @include secCard();
         }
         &--notcheckedSize{
             width: 100%;
             padding-right: 20px;
         }
         &--checked{
+            @include secCard($trans);
             z-index: 2;
 /*          visibility: collapse;*/
             opacity: 0;  
@@ -300,11 +305,11 @@ $card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
             transform: translateX(100%);
             transform-origin: right 50%;
             transition: all 330ms ease-in 50ms;
-            &:hover{
+/*            &:hover{
                 transform: translateX(0);
                 opacity: 1;
             }
-        }
+*/        }
         &--margin{
             margin: 0 5px 0 5px
         }

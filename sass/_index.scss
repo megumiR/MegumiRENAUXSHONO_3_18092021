@@ -15,7 +15,7 @@
     border-bottom-color: #9356DC;
     border-radius: 50%;
     
-    animation: loading 2s cubic-bezier(0.445, 0, 0.55,1);
+    animation: loading 2s ease-in-out;
     }
     &--fullHeight{
     position: fixed;

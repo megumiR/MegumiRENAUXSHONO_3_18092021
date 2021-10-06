@@ -92,12 +92,12 @@ $flex-wrap: wrap;
 
 /*    animation: 800ms 250ms both;*/
     &:hover + .secEntrees{
-        opacity: 1;    
-        transform: translateY(0);
+        opacity: 0;    
+        transform: translateY(50%);
     }
     &:hover + .secPlats{
-        opacity: 0;    
-        transform: translateY(150%);
+        opacity: 1;    
+        transform: translateY(0);
     }
     &:hover + .secDesserts{
         opacity: 0;    
@@ -218,22 +218,22 @@ $flex-wrap: wrap;
 /*appears block by block*/
 
 .secEntrees{
-    transform: translateY(50%); 
-    transform-origin: bottom;
-    opacity: 0; 
+    transform: translateY(0); 
+    transform-origin: top;
+    opacity: 1; 
     transition: all 2000ms ease-in-out 50ms; 
     
 }
 .secPlats{
-    transform: translateY(0);
-    transform-origin: bottom;
-    opacity: 1; 
+    transform: translateY(150%);
+    transform-origin: top;
+    opacity: 0; 
     transition: all 2500ms ease-in-out 100ms;
     
 }
 .secDesserts{
     transform: translateY(0);
-    transform-origin: bottom;
+    transform-origin: top;
     opacity: 1; 
     transition: all 3000ms ease-in-out 180ms;
 
@@ -272,13 +272,15 @@ $trans: transparent;
 
     box-shadow: $card-shadow;
 }
+$card-border-radius: 0 15px 15px 0;
+
 @mixin checkicon{
     background-color: $color-tertiary;  
     height: 100%;
     color: #fff;
     margin-left: auto;
     padding: 0 15px 0 15px;
-    border-radius: 0 15px 15px 0;
+    border-radius: $card-border-radius;
 }
 
 
@@ -300,20 +302,22 @@ $trans: transparent;
     }
 
     &__card{
+        height: auto;
         cursor: pointer;
         transition: transform 500ms ease-in 50ms;
-        &:hover + .sec__card--checked{
+      /*  &:hover + .sec__card--checked{
                 transform: translateX(0);
                 opacity: 1;
+        }*/
+
+        &:hover + .sec__card--checkicon{
+            opacity: 1;
+            transform: translateX(0);
         }
-
-
-        height: auto;
-
-
         @media all and (max-width:370px) {
             height: 81px;
             }
+
 
         &--1stposition{
         position: absolute;
@@ -340,20 +344,20 @@ $trans: transparent;
             z-index: 1;
             @include secCard();
         }
-        &--notcheckedSize{
+/*        &--notcheckedSize{
             width: 100%;
             padding-right: 20px;
         }
         &--checked{
             @include secCard($trans);
             z-index: 2;
-/*          visibility: collapse;*/
+            visibility: collapse;
             opacity: 0;  
 
             transform: translateX(100%);
             transform-origin: right 50%;
             transition: all 330ms ease-in 50ms;
-/*            &:hover{
+            &:hover{
                 transform: translateX(0);
                 opacity: 1;
             }
@@ -369,7 +373,7 @@ $trans: transparent;
             margin-left: auto;
         }
         &--textflex{
-            @include flexColumn($justifyCo-saround, $default);
+            @include flex;
             overflow: hidden;
             width: 100%;
         }
@@ -382,12 +386,35 @@ $trans: transparent;
         &--padding{
             padding: 10px;
         }
+        &--flexBigblock{
+            flex: 6;
+            align-self: center;
+        }
+        &--flexsmallblock{
+            flex: 1;
+            height: 100%;
+            width: 100%;
+
+            @include flex;
+           
+            border-radius: 0 15px 15px 0;
+         
+        }
+        &--checkicon{
+            background-color: $color-tertiary;
+            color: #fff;
+            border-radius: $card-border-radius;
+
+            opacity: 0;
+            transform: scale(.1), translateX(30%);
+            transition: all 330ms ease-out 40ms;
+        }
+
         &--textareasize{
             min-width: 75%
         }
-        &--check{
+     /*   &--check{
             @include checkicon;
             @include flex();
-        }
+        }*/
     }
-}

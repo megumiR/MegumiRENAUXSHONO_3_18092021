@@ -303,8 +303,9 @@ $card-border-radius: 0 15px 15px 0;
 
     &__card{
         height: auto;
+        @include secCard();
         cursor: pointer;
-        transition: transform 500ms ease-in 50ms;
+        transition: all 500ms ease-in 50ms;
       /*  &:hover + .sec__card--checked{
                 transform: translateX(0);
                 opacity: 1;
@@ -340,11 +341,11 @@ $card-border-radius: 0 15px 15px 0;
             top: 195px;
             }
         }        
-        &--notchecked{
+/*        &--notchecked{
             z-index: 1;
             @include secCard();
         }
-/*        &--notcheckedSize{
+        &--notcheckedSize{
             width: 100%;
             padding-right: 20px;
         }
@@ -373,7 +374,7 @@ $card-border-radius: 0 15px 15px 0;
             margin-left: auto;
         }
         &--textflex{
-            @include flex;
+            @include flex();
             overflow: hidden;
             width: 100%;
         }
@@ -397,17 +398,17 @@ $card-border-radius: 0 15px 15px 0;
 
             @include flex;
            
-            border-radius: 0 15px 15px 0;
+            border-radius: $card-border-radius;
          
         }
         &--checkicon{
             background-color: $color-tertiary;
             color: #fff;
-            border-radius: $card-border-radius;
+/*            border-radius: $card-border-radius;*/
 
-            opacity: 0;
-            transform: scale(.1), translateX(30%);
-            transition: all 330ms ease-out 40ms;
+            opacity: 1;
+            transform: scale(1), translateX(30%);
+            transition: all 3ms ease-out 100ms;
         }
 
         &--textareasize{

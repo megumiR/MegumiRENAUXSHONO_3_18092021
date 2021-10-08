@@ -90,22 +90,6 @@ $flex-wrap: wrap;
     margin-top: -40px;
     padding-bottom: 50px;
 
-/*    animation: 800ms 250ms both;*/
-    &:hover + .secEntrees{
-        opacity: 0;    
-        transform: translateY(50%);
-    }
-    &:hover + .secPlats{
-        opacity: 1;    
-        transform: translateY(0);
-    }
-    &:hover + .secDesserts{
-        opacity: 0;    
-        transform: translateY(200%);
-    }
-
-
-
     &--bgcolor{
         background-color: #f2f2f2; /*background doesnt wanna be on top*/
     }
@@ -218,27 +202,37 @@ $flex-wrap: wrap;
 /*appears block by block*/
 
 .secEntrees{
-    transform: translateY(0); 
-    transform-origin: top;
-    opacity: 1; 
-    transition: all 2000ms ease-in-out 50ms; 
-    
+    animation: showingup 1s ease-in forwards;
 }
 .secPlats{
-    transform: translateY(150%);
-    transform-origin: top;
-    opacity: 0; 
-    transition: all 2500ms ease-in-out 100ms;
-    
+   animation: showingup 800ms ease-out 120ms forwards;
 }
 .secDesserts{
-    transform: translateY(0);
+/*    transform: translateY(0);
     transform-origin: top;
     opacity: 1; 
     transition: all 3000ms ease-in-out 180ms;
+WITH :HOVER ....*/
+    animation: showingup 600ms ease-in-out 200ms forwards;
 
 }
-
+@keyframes showingup {
+    0% {
+        transform: translateY(150%);
+        opacity: 0;
+    }
+    33% {
+        transform: translateY(100%);
+    }
+    66% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
 
 
 

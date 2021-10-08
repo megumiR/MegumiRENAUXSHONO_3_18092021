@@ -16,8 +16,8 @@
     border-bottom-color: #9356DC;
     border-radius: 50%;
     
-    animation: loading 2s ease-in-out 100ms;
-    animation-fill-mode: forwards;
+    animation: loading 2s ease-in-out 100ms forwards;
+/*    animation-fill-mode: forwards; */
 }
     &--fullHeight{
     position: fixed;
@@ -29,9 +29,8 @@
     justify-content: space-evenly;
     background-color: #383838;
 
-    animation: loadingbg 50ms ease-in 1950ms;
-    animation-fill-mode: forwards;
-  /*  transition: all 50ms 1950ms;              */ 
+    animation: loadingbg 50ms ease-in 1950ms forwards;
+/*    animation-fill-mode: forwards;  */
     }
 }
 

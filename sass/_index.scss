@@ -173,14 +173,17 @@ $btn-border-radius: 20px;
         @include flex($justifyCo-fstart);
         cursor: pointer;
         
-        transition: transform 400ms 50ms, background-color 600ms 100ms;
+        transition: transform 400ms 50ms;
         &--bgcolor{
             background-color: #f2f2f2;
             &:hover{
-                transform: scale(0.9);
-                background-color: $color-primary darken($color: $color-primary, $amount: 90);
-                 /*opacity* on backcolor not on everything*/
-                
+                background-color: lighten($color: $color-primary, $amount: 35);
+                transform: scale(0.95);
+                opacity: 1;
+                & +.block-howto__icon--color{
+                    opacity: 1;
+                    color: $color-primary;  /*dosnt work?*/
+                }
             }
         }
         &--shape{
@@ -218,14 +221,13 @@ $btn-border-radius: 20px;
         }
     }
     &__icon{
+
         &--color{
-            color: rgba(0, 0, 0, .75);
-            &:hover{
-                color: $color-primary;
-            }
+            color: rgba(0, 0, 0, .75);        
         }
         &--margin{
             margin: 0 20px 0 20px;
+
         }
     }
 }

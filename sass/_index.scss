@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     transition: animation 2s;  
-    z-index: 9999;
+
+/*    z-index: 9999;*/
     &::after{
     content: "";
     width: 16em;
@@ -15,8 +16,9 @@
     border-bottom-color: #9356DC;
     border-radius: 50%;
     
-    animation: loading 2s ease-in-out;
-    }
+    animation: loading 2s ease-in-out 100ms;
+    animation-fill-mode: forwards;
+}
     &--fullHeight{
     position: fixed;
     top: 0;
@@ -27,23 +29,35 @@
     justify-content: space-evenly;
     background-color: #383838;
 
-  /*  transition: all 50ms 1950ms;
-    &::after{
-        opacity: 0;                  
-        
-        }        */                  
+    animation: loadingbg 50ms ease-in 1950ms;
+    animation-fill-mode: forwards;
+  /*  transition: all 50ms 1950ms;              */ 
     }
 }
 
 @keyframes loading {
-    to {
-        transform: rotate(1turn), scale(2);
-        z-index: -9999;
-    }
     from{
         transform: rotate(-1turn);
+        z-index: 9999;
+       
+    }
+    to {
+        transform: scale(2), rotate(1turn);
+       /* z-index: -9999;*/
+        opacity: 0;
     }
 }  
+@keyframes loadingbg {
+    from{
+/*        transform: translateX(0);*/
+        z-index: 9999;  
+    }
+    to {
+/*        transform: translateX(-9999px); */
+        z-index: -9999;  
+        opacity: 0;
+    }
+}
 
 /*nav*/
 $nav-bgcolor: rgba(0, 0, 0, .10);

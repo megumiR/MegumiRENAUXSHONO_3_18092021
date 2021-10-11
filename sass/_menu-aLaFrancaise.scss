@@ -153,6 +153,7 @@ $flex-wrap: wrap;
 
     &__buttonarea{
         @include flex();
+        margin-top: 50px;
     }
     &__button{
         @include flex();
@@ -205,7 +206,7 @@ $flex-wrap: wrap;
     animation: showingup 1s ease-in forwards;
 }
 .secPlats{
-   animation: showingup 800ms ease-out 120ms forwards;
+   animation: showingup 600ms ease-in-out 400ms forwards;
 }
 .secDesserts{
 /*    transform: translateY(0);
@@ -213,19 +214,13 @@ $flex-wrap: wrap;
     opacity: 1; 
     transition: all 3000ms ease-in-out 180ms;
 WITH :HOVER ....*/
-    animation: showingup 600ms ease-in-out 200ms forwards;
+    animation: showingup 680ms ease-in-out 300ms forwards;
 
 }
 @keyframes showingup {
     0% {
         transform: translateY(150%);
         opacity: 0;
-    }
-    33% {
-        transform: translateY(100%);
-    }
-    66% {
-        transform: translateY(50%);
     }
     100% {
         transform: translateY(0);
@@ -300,18 +295,11 @@ $card-border-radius: 0 15px 15px 0;
         @include secCard();
         cursor: pointer;
         transition: all 500ms ease-in 50ms;
-      /*  &:hover + .sec__card--checked{
-                transform: translateX(0);
-                opacity: 1;
-        }*/
 
-        &:hover + .sec__card--checkicon{
-            opacity: 1;
-            transform: translateX(0);
-        }
+        
         @media all and (max-width:370px) {
             height: 81px;
-            }
+        }
 
 
         &--1stposition{
@@ -324,7 +312,7 @@ $card-border-radius: 0 15px 15px 0;
         top: 110px;
         width: 95%;
         @media all and (max-width:370px) {
-            top: 128px;
+            top: 125px;
             }
         }
         &--3rdposition{
@@ -332,31 +320,10 @@ $card-border-radius: 0 15px 15px 0;
         top: 180px;
         width: 95%;
         @media all and (max-width:370px) {
-            top: 195px;
+            top: 210px;
             }
         }        
-/*        &--notchecked{
-            z-index: 1;
-            @include secCard();
-        }
-        &--notcheckedSize{
-            width: 100%;
-            padding-right: 20px;
-        }
-        &--checked{
-            @include secCard($trans);
-            z-index: 2;
-            visibility: collapse;
-            opacity: 0;  
 
-            transform: translateX(100%);
-            transform-origin: right 50%;
-            transition: all 330ms ease-in 50ms;
-            &:hover{
-                transform: translateX(0);
-                opacity: 1;
-            }
-*/        }
         &--margin{
             margin: 0 5px 0 5px
         }
@@ -368,7 +335,7 @@ $card-border-radius: 0 15px 15px 0;
             margin-left: auto;
         }
         &--textflex{
-            @include flex();
+            @include flexColumn($position, $default);
             overflow: hidden;
             width: 100%;
         }
@@ -384,15 +351,23 @@ $card-border-radius: 0 15px 15px 0;
         &--flexBigblock{
             flex: 6;
             align-self: center;
+
+            transform-origin: right;
+            transition: all 400ms ease-in 50ms;
+            &:hover + .sec__card--checkicon{
+                opacity: 1;
+                transform: scaleX(1), translateX(0);
+            }
         }
         &--flexsmallblock{
             flex: 1;
-            height: 100%;
             width: 100%;
 
             @include flex;
            
             border-radius: $card-border-radius;
+            
+
          
         }
         &--checkicon{
@@ -400,16 +375,18 @@ $card-border-radius: 0 15px 15px 0;
             color: #fff;
 /*            border-radius: $card-border-radius;*/
 
-            opacity: 1;
-            transform: scale(1), translateX(30%);
-            transition: all 3ms ease-out 100ms;
+            opacity: 0;
+            transform: scaleX(.1), translateX(80%);
+            
+            transition: all 400ms ease-in 50ms ;
+            &:hover{
+                opacity: 1;
+                transform: scaleX(1), translateX(0);
+            }
         }
 
         &--textareasize{
             min-width: 75%
         }
-     /*   &--check{
-            @include checkicon;
-            @include flex();
-        }*/
     }
+}

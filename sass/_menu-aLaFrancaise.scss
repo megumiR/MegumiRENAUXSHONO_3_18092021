@@ -154,6 +154,10 @@ $flex-wrap: wrap;
     &__buttonarea{
         @include flex();
         margin-top: 50px;
+
+        @media all and (min-width:1024px) {
+            margin-top: unset;
+        }
     }
     &__button{
         @include flex();
@@ -199,14 +203,29 @@ $flex-wrap: wrap;
 
     } 
 } 
+/*Relocate section @media*/
+.allsec{
+    @media all and (min-width:1024px) {
+        display: flex;
+    }
+}
+
 
 /*appears block by block*/
 
 .secEntrees{
     animation: showingup 1s ease-in forwards;
+
+    @media all and (min-width:1024px) {
+        width: 32%;
+    }
 }
 .secPlats{
    animation: showingup 600ms ease-in-out 400ms forwards;
+
+   @media all and (min-width:1024px) {
+    width: 32%;
+    }
 }
 .secDesserts{
 /*    transform: translateY(0);
@@ -216,6 +235,9 @@ $flex-wrap: wrap;
 WITH :HOVER ....*/
     animation: showingup 680ms ease-in-out 300ms forwards;
 
+    @media all and (min-width:1024px) {
+        width: 32%;
+    }
 }
 @keyframes showingup {
     0% {
@@ -333,6 +355,7 @@ $card-border-radius: 0 15px 15px 0;
         }
         &--pricemargin{
             margin-left: auto;
+            font-weight: 900
         }
         &--textflex{
             @include flexColumn($position, $default);

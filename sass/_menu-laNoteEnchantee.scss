@@ -1,0 +1,424 @@
+/*$fontfamily-text: Roboto, sans-serif;
+$fontfamily-logoTitle: Shrikhand, serif;
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-base: #f2f2f2;
+
+$width: device-width;
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;} /* $fontfamily-text;  */
+/*
+h2{
+    font-family: Shrikhand, serif;} /* $fontfamily-logoTitle; */
+
+    /*header*//*
+$position: center;
+$default: stretch;
+$justifyCo-center: center;
+$justifyCo-fstart: flex-start; /*default value*//*
+$justifyCo-saround: space-around;
+
+$flex-wrap: wrap;
+
+@mixin flex($justifyCo: $justifyCo-center){
+    display: flex;
+    justify-content: $justifyCo;
+    align-items: $position;
+}
+@mixin flexColumn($justifyCo: $justifyCo-saround, $align-item: $position){
+    display: flex;
+    flex-direction: column;
+    justify-content: $justifyCo;
+    align-items: $align-item;
+}
+*/
+
+.header{
+    width: 100%;
+    @include flex;
+
+    &__logo{
+        min-width: 220px;
+        max-width: 20%;
+        height: auto;
+        padding: 20px 20px 20px 20px;
+        &--order{
+            order: 2;
+        }
+    }
+    &__icon{
+        cursor: pointer;
+        &--color {
+            color: #000;
+        }
+        &--color a{   /*doesnt work today*/
+            color: #000;
+        }
+        &--order{
+            order: 1;
+        }
+        &--padding{
+            padding-right: 1rem;
+        }        
+    }
+}
+
+/*div img*/
+.catchyimg{
+    background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    &--size{
+        width: 100%; 
+        height: 14rem;
+        @media all and (min-width:1024px){
+            height: 18rem; 
+        }
+    }
+}
+
+/*article*/
+
+.art{
+    margin-top: -40px;
+    padding-bottom: 50px;
+
+    &--bgcolor{
+        background-color: #f2f2f2; /*background doesnt wanna be on top*/
+    }
+    &--border{
+        border-radius: 50px 50px 0 0;
+    }
+    &__header{
+        @include flex($justifyCo-saround);
+        margin: 20px 50px;
+    }
+    &--iconmargin{
+        margin-left: auto;
+    }
+    &--icon{
+        @include flex;
+        /*position exactry the same place*/
+        position: relative;
+        height: 45px;
+
+        transition: transform 500ms ease-out;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+        /*
+        &:hover + .art__card--iconNocolor{
+            
+        }/*
+        &:active + .art__card--iconcolor{
+            opacity: 1;
+            cursor: pointer;
+            transform: scale(1.2);
+        } */
+    }
+    &--iconposition{
+        position: absolute;
+        right: 1rem;  
+    }
+    &--iconNocolor{
+       /* transform-origin: center;*/
+       /* transform: scale(1);*/       
+        transition: opacity 350ms 100ms;
+        &:hover{
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    }
+    &--iconcolor{
+        opacity: 0;
+        color: $color-secondary;
+/*            transform-origin: right bottom;*/
+        transition: opacity 1000ms ease-in 40ms;
+        &:hover{
+            opacity: 0.8;
+           
+        }
+    }
+
+
+/*article order button at the bottom of page*/
+
+    &__buttonarea{
+        @include flex();
+        margin-top: 50px;
+
+        @media all and (min-width:1024px) {
+            margin-top: unset;
+        }
+    }
+    &__button{
+        @include flex();
+        color: #fff;
+        cursor: pointer;   
+        transition: transform 300ms 50ms;
+        &--color{
+            background-image: linear-gradient(to bottom right, $color-secondary 0%, $color-primary 100%);     
+            &:hover{
+                background-image: linear-gradient(to bottom right, lighten($color-secondary, 5) 0%, lighten($color-primary, 5) 100%);  
+                opacity: 1;    
+            }
+        }/*
+        &::after{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background-image: linear-gradient(to bottom right, lighten($color-secondary,50) 0%, lighten($color-primary,50) 100%);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;             
+        }*/
+        &--shape{
+            width: 180px;
+            height: 2.5rem;
+            border-radius: 20px;
+            border: none;
+            text-decoration: none;
+        }
+
+        &--shadow{
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: opacity 300ms 50ms;
+            &:hover{
+                opacity: 1;
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+            }
+        }
+
+
+    } 
+} 
+/*Relocate section @media*/
+.allsec{
+    @media all and (min-width:1024px) {
+        display: flex;
+    }
+}
+
+
+/*appears block by block*/
+
+.secEntrees{
+    animation: showingup 1s ease-in forwards;
+
+    @media all and (min-width:1024px) {
+        width: 32%;
+    }
+}
+.secPlats{
+   animation: showingup 600ms ease-in-out 400ms forwards;
+
+   @media all and (min-width:1024px) {
+    width: 32%;
+    }
+}
+.secDesserts{
+/*    transform: translateY(0);
+    transform-origin: top;
+    opacity: 1; 
+    transition: all 3000ms ease-in-out 180ms;
+WITH :HOVER ....*/
+    animation: showingup 680ms ease-in-out 300ms forwards;
+
+    @media all and (min-width:1024px) {
+        width: 32%;
+    }
+}
+@keyframes showingup {
+    0% {
+        transform: translateY(150%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+
+
+
+/*section*/
+$fontweight-secTitle: 500;
+@mixin secTitle($fontweight: $fontweight-secTitle){
+    text-transform: uppercase;
+    font-weight: $fontweight;
+    font-size: 1.3em;
+}
+
+$textDeco-shortline: underline $color-tertiary 3px; 
+@mixin underlineDeco($textDeco: $textDeco-shortline){
+    font-style: normal;
+    text-decoration: $textDeco;
+}
+
+/*$card-transition: ;  */
+$card-transitionorigin: right;
+$card-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19); 
+$mat: #fff;
+$trans: transparent;
+@mixin secCard($bg-clr: $mat) {
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg-clr;
+    border-radius: 15px;
+
+    transition: transform 200ms ease-in 50ms; /*transition in parent part*/
+    transform-origin: $card-transitionorigin;
+
+    box-shadow: $card-shadow;
+}
+$card-border-radius: 0 15px 15px 0;
+
+@mixin checkicon{
+    background-color: $color-tertiary;  
+    height: 100%;
+    color: #fff;
+    margin-left: auto;
+    padding: 0 15px 0 15px;
+    border-radius: $card-border-radius;
+}
+
+
+
+/*section cards positon setting*/
+.sec{
+    &--position{
+    position: relative;
+    min-height: 320px;
+    }
+    /*title deco*/
+    &__title{    
+        @include secTitle();
+
+        padding-left: 8px;
+        &--border{ 
+            @include underlineDeco();
+        }
+    }
+
+    &__card{
+        height: auto;
+        @include secCard();
+        cursor: pointer;
+        transition: all 500ms ease-in 50ms;
+
+        
+        @media all and (max-width:370px) {
+            height: 81px;
+        }
+
+
+        &--1stposition{
+        position: absolute;
+        top: 40px;
+        width: 95%;
+        }
+        &--2ndposition{
+        position: absolute;
+        top: 110px;
+        width: 95%;
+        @media all and (max-width:370px) {
+            top: 125px;
+            }
+        }
+        &--3rdposition{
+        position: absolute;
+        top: 180px;
+        width: 95%;
+        @media all and (max-width:370px) {
+            top: 210px;
+            }
+        }        
+        &--4thdposition{
+            position: absolute;
+            top: 250px;
+            width: 95%;
+            @media all and (max-width:370px) {
+                top: 395px;
+            }
+        } 
+
+
+        &--margin{
+            margin: 0 5px 0 5px
+        }
+        &--textmargin{
+            margin: 0;
+            display: flex;
+        }
+        &--pricemargin{
+            margin-left: auto;
+            font-weight: 900
+        }
+        &--textflex{
+            @include flexColumn($position, $default);
+            overflow: hidden;
+            width: 100%;
+        }
+        &--textwrap{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        &--padding{
+            padding: 10px;
+        }
+        &--flexBigblock{
+            flex: 6;
+            align-self: center;
+
+            transform-origin: right;
+            transition: all 400ms ease-in 50ms;
+            &:hover + .sec__card--checkicon{
+                opacity: 1;
+                transform: scaleX(1), translateX(0);
+            }
+        }
+        &--flexsmallblock{
+            flex: 1;
+            width: 100%;
+
+            @include flex;
+           
+            border-radius: $card-border-radius;
+            
+
+         
+        }
+        &--checkicon{
+            background-color: $color-tertiary;
+            color: #fff;
+/*            border-radius: $card-border-radius;*/
+
+            opacity: 0;
+            transform: scaleX(.1), translateX(80%);
+            
+            transition: all 400ms ease-in 50ms ;
+            &:hover{
+                opacity: 1;
+                transform: scaleX(1), translateX(0);
+            }
+        }
+
+        &--textareasize{
+            min-width: 75%
+        }
+    }
+}

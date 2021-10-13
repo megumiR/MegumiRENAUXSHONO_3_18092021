@@ -72,7 +72,7 @@ $flex-wrap: wrap;
 
 /*div img*/
 .catchyimg{
-    background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+    background-image: url("../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
     background-size: cover;
     background-position: center;
     &--size{
@@ -415,12 +415,12 @@ $card-border-radius: 0 15px 15px 0;
 /*            border-radius: $card-border-radius;*/
 
             opacity: 0;
-            transform: scaleX(.1), translateX(80%);
+            transform: scaleX(0) translateX(80%);
             
             transition: all 400ms ease-in 50ms ;
             &:hover{
                 opacity: 1;
-                transform: scaleX(1), translateX(0);
+                transform: scaleX(1) translateX(0);
             }
         }
 

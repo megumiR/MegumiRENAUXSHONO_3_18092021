@@ -1281,7 +1281,7 @@ $flex-wrap: wrap;
 
 /*div img*/
 .catchyimg {
-  background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-image: url("../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1731,16 +1731,16 @@ WITH :HOVER ....*/
   color: #fff;
   /*            border-radius: $card-border-radius;*/
   opacity: 0;
-  -webkit-transform: scaleX(0.1), translateX(80%);
-          transform: scaleX(0.1), translateX(80%);
+  -webkit-transform: scaleX(0) translateX(80%);
+          transform: scaleX(0) translateX(80%);
   -webkit-transition: all 400ms ease-in 50ms;
   transition: all 400ms ease-in 50ms;
 }
 
 .sec__card--checkicon:hover {
   opacity: 1;
-  -webkit-transform: scaleX(1), translateX(0);
-          transform: scaleX(1), translateX(0);
+  -webkit-transform: scaleX(1) translateX(0);
+          transform: scaleX(1) translateX(0);
 }
 
 .sec__card--textareasize {

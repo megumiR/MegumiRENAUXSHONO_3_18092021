@@ -298,14 +298,17 @@ $card-border-radius: 0 15px 15px 0;
 
 /*section cards positon setting*/
 .sec{
-    &--position{
+    &--position4cards{
         position: relative;
         min-height: 320px;
-  /*????????????????????????????????????????*/      
         @media all and (max-width:370px) {
             min-height: 370px;
         }
-    }
+    } /*???Doesnt work???*/   
+    &--position{
+        position: relative;
+        min-height: 280px;
+        }
     /*title deco*/
     &__title{    
         @include secTitle();
@@ -356,7 +359,7 @@ $card-border-radius: 0 15px 15px 0;
         @media all and (max-width:370px) {
                 top: 295px;
             }
-        } 
+        } /*doesnt work??????????????????*/
 
 
         &--margin{
@@ -422,7 +425,7 @@ $card-border-radius: 0 15px 15px 0;
         }
 
         &--textareasize{
-            min-width: 75%
+            min-width: 75%;
         }
     }
 }

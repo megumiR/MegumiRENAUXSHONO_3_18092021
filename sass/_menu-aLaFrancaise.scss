@@ -316,7 +316,7 @@ $card-border-radius: 0 15px 15px 0;
         height: auto;
         @include secCard();
         cursor: pointer;
-        transition: all 500ms ease-in 50ms;
+/*        transition: all 500ms ease-in 50ms;*/
 
         
         @media all and (max-width:370px) {
@@ -399,7 +399,7 @@ $card-border-radius: 0 15px 15px 0;
 /*            border-radius: $card-border-radius;*/
 
             opacity: 0;
-            transform: scaleX(.1), translateX(80%);
+            transform: scaleX(.1), translateX(-80%);
             
             transition: all 400ms ease-in 50ms ;
             &:hover{

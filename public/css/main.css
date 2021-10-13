@@ -1117,14 +1117,14 @@ WITH :HOVER ....*/
   }
 }
 
-.sec__card--4thdposition {
+.sec__card--4thposition {
   position: absolute;
   top: 250px;
   width: 95%;
 }
 
 @media all and (max-width: 370px) {
-  .sec__card--4thdposition {
+  .sec__card--4thposition {
     top: 295px;
   }
 }

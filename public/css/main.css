@@ -1214,8 +1214,8 @@ WITH :HOVER ....*/
   color: #fff;
   /*            border-radius: $card-border-radius;*/
   opacity: 0;
-  -webkit-transform: scaleX(0) translateX(80%);
-          transform: scaleX(0) translateX(80%);
+  -webkit-transform: scaleX(0.1) translateX(80%);
+          transform: scaleX(0.1) translateX(80%);
   -webkit-transition: all 400ms ease-in 50ms;
   transition: all 400ms ease-in 50ms;
 }

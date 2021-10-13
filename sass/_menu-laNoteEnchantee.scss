@@ -427,7 +427,7 @@ $card-border-radius: 0 15px 15px 0;
 /*            border-radius: $card-border-radius;*/
 
             opacity: 0;
-            transform: scaleX(0) translateX(80%);
+            transform: scaleX(0.1) translateX(80%);
             
             transition: all 400ms ease-in 50ms ;
             &:hover{

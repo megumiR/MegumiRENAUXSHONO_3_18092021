@@ -139,6 +139,9 @@ $flex-wrap: wrap;
     &--iconposition{
         position: absolute;
         right: 1rem;  
+        @media all and (max-width:370px) {
+            right: unset;
+        }
     }
     &--iconNocolor{
        /* transform-origin: center;*/
@@ -347,6 +350,9 @@ $card-border-radius: 0 15px 15px 0;
         position: absolute;
         top: 40px;
         width: 95%;
+        @media all and (min-width:1024px) {
+            top: 50px;
+            }
         }
         &--2ndposition{
         position: absolute;
@@ -354,6 +360,9 @@ $card-border-radius: 0 15px 15px 0;
         width: 95%;
         @media all and (max-width:370px) {
             top: 125px;
+            }
+        @media all and (min-width:1024px) {
+            top: 120px;
             }
         }
         &--3rdposition{
@@ -363,6 +372,9 @@ $card-border-radius: 0 15px 15px 0;
         @media all and (max-width:370px) {
             top: 210px;
             }
+        @media all and (min-width:1024px) {
+            top: 190px;
+            }
         }        
         &--4thposition{
         position: absolute;
@@ -371,7 +383,10 @@ $card-border-radius: 0 15px 15px 0;
         @media all and (max-width:370px) {
                 top: 295px;
             }
-        } /*doesnt work??????????????????*/
+        @media all and (min-width:1024px) {
+            top: 260px;
+            }
+        } 
 
 
         &--margin{
@@ -397,17 +412,24 @@ $card-border-radius: 0 15px 15px 0;
         }
         
         &--padding{
-            padding: 10px;
+            padding: 10px 0 10px 10px;
         }
         &--flexBigblock{
             flex: 6;
             align-self: center;
 
-            transform-origin: right;
-            transition: all 400ms ease-in 50ms;
+            transform: scaleX(1.1) translateX(4%);
+            transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms,
+                        translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms;
+            &:hover{
+               /* opacity: 1;*/
+               transform: scaleX(1) translateX(0);
+               
+            }
+            
             &:hover + .sec__card--checkicon{
                 opacity: 1;
-                transform: scaleX(1), translateX(0);
+                transform: scaleX(1) translateX(0);
             }
         }
         &--flexsmallblock{
@@ -424,16 +446,16 @@ $card-border-radius: 0 15px 15px 0;
         &--checkicon{
             background-color: $color-tertiary;
             color: #fff;
-/*            border-radius: $card-border-radius;*/
-
             opacity: 0;
-            transform: scaleX(0.1) translateX(80%);
-            
-            transition: all 400ms ease-in 50ms ;
-            &:hover{
+            transform: scaleX(0.1) translateX(100%);
+            transform-origin: right;            
+            transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms,
+                        translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms,
+                        opacity 468.679ms cubic-bezier(0.38, 0.14, 0.43, 1) 286.338ms;
+       /*     &:hover{
                 opacity: 1;
                 transform: scaleX(1) translateX(0);
-            }
+            }*/
         }
 
         &--textareasize{

@@ -110,7 +110,7 @@ $flex-wrap: wrap;
     }
     &__header{
         @include flex($justifyCo-saround);
-        margin: 20px 50px;
+        margin: 20px 35px;
         & h2{
             font-family: $fontfamily-logoTitle;
         }

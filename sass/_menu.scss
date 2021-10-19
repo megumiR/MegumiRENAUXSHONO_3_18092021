@@ -422,8 +422,7 @@ $card-border-radius: 0 15px 15px 0;
             align-self: center;
 
             transform: scaleX(1.1) translateX(4%);
-            transition: scale 707.037ms 150ms,
-                        translate 707.037ms 150ms;
+            transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
             &:hover{
                transform: scaleX(1) translateX(0);
                

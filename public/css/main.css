@@ -25,6 +25,7 @@
 
 */
 /*general*/
+/*, cursive*/
 /*
 .  -typograhy{
     font-size: 1em;
@@ -34,12 +35,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Roboto, sans-serif;
-}
-
-h2 {
-  font-family: Shrikhand, serif;
-  /*    text-transform: uppercase;*/
+  font-family: "Roboto", sans-serif;
 }
 
 /*default value*/
@@ -74,6 +70,10 @@ h2 {
 }
 
 /*footer*/
+.footer h2 {
+  font-family: "Shrikhand";
+}
+
 .footer--textmargin {
   margin: 0;
 }
@@ -795,6 +795,10 @@ $flex-wrap: wrap;
   margin: 20px 50px;
 }
 
+.art__header h2 {
+  font-family: "Shrikhand";
+}
+
 .art--iconmargin {
   margin-left: auto;
 }
@@ -1211,12 +1215,11 @@ WITH :HOVER ....*/
       align-self: center;
   -webkit-transform: scaleX(1.1) translateX(4%);
           transform: scaleX(1.1) translateX(4%);
-  -webkit-transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms;
-  transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms;
+  -webkit-transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
+  transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
 }
 
 .sec__card--flexBigblock:hover {
-  /* opacity: 1;*/
   -webkit-transform: scaleX(1) translateX(0);
           transform: scaleX(1) translateX(0);
 }
@@ -1248,12 +1251,12 @@ WITH :HOVER ....*/
   background-color: #99E2D0;
   color: #fff;
   opacity: 0;
-  -webkit-transform: scaleX(0.1) translateX(100%);
-          transform: scaleX(0.1) translateX(100%);
+  -webkit-transform: scaleX(0.01) translateX(10%);
+          transform: scaleX(0.01) translateX(10%);
   -webkit-transform-origin: right;
           transform-origin: right;
-  -webkit-transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, opacity 468.679ms cubic-bezier(0.38, 0.14, 0.43, 1) 286.338ms;
-  transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, opacity 468.679ms cubic-bezier(0.38, 0.14, 0.43, 1) 286.338ms;
+  -webkit-transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, opacity 468.679ms cubic-bezier(0.38, 0.14, 0.43, 1) 106.338ms;
+  transition: scale 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, translate 707.037ms cubic-bezier(0.38, 0.14, 0.43, 1) 50ms, opacity 468.679ms cubic-bezier(0.38, 0.14, 0.43, 1) 106.338ms;
   /*     &:hover{
                 opacity: 1;
                 transform: scaleX(1) translateX(0);

@@ -413,7 +413,13 @@ $card-border-radius: 0 15px 15px 0;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        
+        &--textwrapTb{
+            @media all and (min-width:1024px) {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
         &--padding{
             padding: 10px 0 10px 10px;
         }

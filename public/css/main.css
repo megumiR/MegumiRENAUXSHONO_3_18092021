@@ -641,8 +641,6 @@ body {
   opacity: 0.8;
 }
 
-/*
-@import "_menu-aLaFrancaise";*/
 /*$fontfamily-text: Roboto, sans-serif;
 $fontfamily-logoTitle: Shrikhand, serif;
 
@@ -1266,6 +1264,3 @@ WITH :HOVER ....*/
 .sec__card--textareasize {
   min-width: 75%;
 }
-
-/*@import "_menu-laPaletteDuGout";
-@import "_menu-leDeliceDesSens";*/

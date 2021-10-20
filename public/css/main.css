@@ -177,8 +177,8 @@ body {
     z-index: 9999;
   }
   to {
-    -webkit-transform: scale(2) rotate(1turn);
-            transform: scale(2) rotate(1turn);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
     /* z-index: -9999;*/
     opacity: 0;
   }
@@ -191,8 +191,8 @@ body {
     z-index: 9999;
   }
   to {
-    -webkit-transform: scale(2) rotate(1turn);
-            transform: scale(2) rotate(1turn);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
     /* z-index: -9999;*/
     opacity: 0;
   }
@@ -313,6 +313,15 @@ body {
 .aside__button {
   color: #fff;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /*  &::after normally works too*/
   /*      &--color{ 
             background-image: linear-gradient(to bottom right,#FF79DA 0%, #9356DC 100%);
@@ -340,6 +349,7 @@ body {
   border-radius: 20px;
   border: none;
   text-decoration: none;
+  padding: 0px 10px;
 }
 
 .aside__button--shadow {

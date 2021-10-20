@@ -121,6 +121,8 @@ $btn-border-radius: 20px;
     &__button{
         color: #fff;
         cursor: pointer;
+        @include flex();
+        
             /*  &::after normally works too*/
   /*      &--color{ 
             background-image: linear-gradient(to bottom right,#FF79DA 0%, #9356DC 100%);
@@ -142,6 +144,7 @@ $btn-border-radius: 20px;
             border-radius: $btn-border-radius;
             border: none;
             text-decoration: none;
+            padding: 0px 10px;
         }        
         &--shadow{
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

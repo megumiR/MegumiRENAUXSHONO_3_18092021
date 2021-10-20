@@ -1176,6 +1176,9 @@ WITH :HOVER ....*/
 
 .sec__card--textmargin {
   margin: 0;
+}
+
+.sec__card--flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

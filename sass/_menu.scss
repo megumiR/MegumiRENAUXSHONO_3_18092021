@@ -403,8 +403,10 @@ $card-border-radius: 0 15px 15px 0;
             display: flex;
         }
         &--pricemargin{
-            margin-left: auto;
-            font-weight: 900
+            padding-left: 5px;
+            padding-top: 23px;
+/*            margin-left: auto;
+            font-weight: 900; */
         }
         &--textflex{
             @include flexColumn($position, $default);
@@ -427,12 +429,12 @@ $card-border-radius: 0 15px 15px 0;
             padding: 10px 0 10px 10px;
         }
         &--flexBigblock{
-            flex: 6;
-            align-self: center;
+        /*    flex: 6;
+        */    align-self: center;
 
-            transform: scaleX(1.1) translateX(4%);
+        /*    transform: scaleX(1.1) translateX(4%);
             transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
-        /*    &:hover{
+            &:hover{
                transform: scaleX(1) translateX(0);
                
             }*/
@@ -441,13 +443,19 @@ $card-border-radius: 0 15px 15px 0;
                 opacity: 1;
                 transform: scaleX(1) translateX(0);
             }
+            &:hover + .sec__card--pricecheckicon{
+                transform: translateX(-15%);
+            }
         }
         &--pricecheckicon{
+            width: 7em;
             @include flex;
+            transform: translateX(0);
+            transition: translate 470ms ease-in-out 100ms;
         }
         &--flexsmallblock{
-            flex: 1;
-            width: 100%;
+        /*    flex: 1;
+        */    width: 100%;
 
             @include flex;
            

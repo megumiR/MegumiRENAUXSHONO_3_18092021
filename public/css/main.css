@@ -1201,8 +1201,10 @@ WITH :HOVER ....*/
 }
 
 .sec__card--pricemargin {
-  margin-left: auto;
-  font-weight: 900;
+  padding-left: 5px;
+  padding-top: 23px;
+  /*            margin-left: auto;
+            font-weight: 900; */
 }
 
 .sec__card--textflex {
@@ -1242,17 +1244,14 @@ WITH :HOVER ....*/
 }
 
 .sec__card--flexBigblock {
-  -webkit-box-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
+  /*    flex: 6;
+        */
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-transform: scaleX(1.1) translateX(4%);
-          transform: scaleX(1.1) translateX(4%);
-  -webkit-transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
-  transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
-  /*    &:hover{
+  /*    transform: scaleX(1.1) translateX(4%);
+            transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
+            &:hover{
                transform: scaleX(1) translateX(0);
                
             }*/
@@ -1264,7 +1263,13 @@ WITH :HOVER ....*/
           transform: scaleX(1) translateX(0);
 }
 
+.sec__card--flexBigblock:hover + .sec__card--pricecheckicon {
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
+}
+
 .sec__card--pricecheckicon {
+  width: 7em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1274,12 +1279,15 @@ WITH :HOVER ....*/
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: translate 470ms ease-in-out 100ms;
+  transition: translate 470ms ease-in-out 100ms;
 }
 
 .sec__card--flexsmallblock {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  /*    flex: 1;
+        */
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

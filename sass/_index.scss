@@ -277,6 +277,21 @@ $card-border-radius: 20px;
             height: 75%;
             object-fit: cover;
             border-radius: $card-border-radius $card-border-radius 0 0;
+            
+        }
+        &--imgarea{
+            position: relative;
+            text-align: center;
+        }
+        &--imgnew{
+            font-size: small;
+            padding: 5px 10px;
+            border-radius: 5%;
+            background-color: $color-tertiary; 
+            color: darken($color: $color-tertiary, $amount: 50);
+            position: absolute;
+            top: 1em;
+            right: 1em;
         }
         &--text{
             width: 90%;

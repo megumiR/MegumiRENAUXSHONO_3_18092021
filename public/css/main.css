@@ -550,6 +550,22 @@ body {
   border-radius: 20px 20px 0 0;
 }
 
+.art__card--imgarea {
+  position: relative;
+  text-align: center;
+}
+
+.art__card--imgnew {
+  font-size: small;
+  padding: 5px 10px;
+  border-radius: 5%;
+  background-color: #99E2D0;
+  color: #1b6150;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
 .art__card--text {
   width: 90%;
   display: -webkit-box;

@@ -1250,11 +1250,13 @@ WITH :HOVER ....*/
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  /*      &:hover + .sec__card--pricecheckicon{
-                transform: scaleX(1);
-                width: 7em;
-                opacity: 1;
-            }*/
+}
+
+.sec__card--flexBigblock:hover + .sec__card--pricecheckicon {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  width: 7em;
+  opacity: 1;
 }
 
 .sec__card--flexBigblock:hover + .sec__card--checkicon {

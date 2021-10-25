@@ -434,11 +434,11 @@ $card-border-radius: 0 15px 15px 0;
             align-self: center;
             
         
-      /*      &:hover + .sec__card--pricecheckicon{
+            &:hover + .sec__card--pricecheckicon{
                 transform: scaleX(1);
                 width: 7em;
                 opacity: 1;
-            }*/
+            }
             &:hover + .sec__card--checkicon{
                 opacity: 1;
                 width: 3em;
@@ -452,7 +452,6 @@ $card-border-radius: 0 15px 15px 0;
                         opacity 440ms ease-in-out 50ms;
         }
 
-        
         &--flexsmallblock{
             width: 100%;
 

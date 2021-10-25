@@ -1252,17 +1252,28 @@ WITH :HOVER ....*/
           transform: scaleX(1.1) translateX(4%);
   -webkit-transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
   transition: scale 707.037ms 150ms, translate 707.037ms 150ms;
-}
-
-.sec__card--flexBigblock:hover {
-  -webkit-transform: scaleX(1) translateX(0);
-          transform: scaleX(1) translateX(0);
+  /*    &:hover{
+               transform: scaleX(1) translateX(0);
+               
+            }*/
 }
 
 .sec__card--flexBigblock:hover + .sec__card--checkicon {
   opacity: 1;
   -webkit-transform: scaleX(1) translateX(0);
           transform: scaleX(1) translateX(0);
+}
+
+.sec__card--pricecheckicon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .sec__card--flexsmallblock {

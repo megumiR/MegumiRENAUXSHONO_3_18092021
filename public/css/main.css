@@ -1258,6 +1258,8 @@ WITH :HOVER ....*/
 }
 
 .sec__card--flexBigblock:hover + .sec__card--checkicon {
+  height: 100%;
+  width: 3em;
   opacity: 1;
   -webkit-transform: scaleX(1) translateX(0);
           transform: scaleX(1) translateX(0);
@@ -1266,10 +1268,11 @@ WITH :HOVER ....*/
 .sec__card--flexBigblock:hover + .sec__card--pricecheckicon {
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
+  width: 7em;
+  opacity: 1;
 }
 
 .sec__card--pricecheckicon {
-  width: 7em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

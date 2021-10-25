@@ -440,15 +440,18 @@ $card-border-radius: 0 15px 15px 0;
             }*/
             
             &:hover + .sec__card--checkicon{
+                height: 100%;
+                width: 3em;
                 opacity: 1;
                 transform: scaleX(1) translateX(0);
             }
             &:hover + .sec__card--pricecheckicon{
                 transform: translateX(-15%);
+                width: 7em;
+                opacity: 1;
             }
         }
         &--pricecheckicon{
-            width: 7em;
             @include flex;
             transform: translateX(0);
             transition: translate 470ms ease-in-out 100ms;
@@ -462,6 +465,7 @@ $card-border-radius: 0 15px 15px 0;
             border-radius: $card-border-radius;
         }
         &--checkicon{
+           
             background-color: $color-tertiary;
             color: #fff;
             opacity: 0;

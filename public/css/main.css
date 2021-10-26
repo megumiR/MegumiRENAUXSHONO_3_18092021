@@ -1317,9 +1317,13 @@ WITH :HOVER ....*/
 @-webkit-keyframes scale {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
   }
   50%, 100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
     -webkit-transform: scaleX(1);
@@ -1330,9 +1334,13 @@ WITH :HOVER ....*/
 @keyframes scale {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
   }
   50%, 100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
     -webkit-transform: scaleX(1);
